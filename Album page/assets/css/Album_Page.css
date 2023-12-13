@@ -1,0 +1,25 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+    background: rgb(209,144,204);
+    background: linear-gradient(180deg, rgba(209,144,204,1) 0%, rgba(0,0,0,1) 100%); 
+    background-attachment: fixed;
+
+}
+
+.link-list{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#linkArtista{
+    text-decoration: none;
+}
+
+
+.containerSongs{
+    background-color: rgba(0,0,0,0.5);
+   height: 800px;
+}
