@@ -1,0 +1,202 @@
+body {
+    /* Altezza della barra di navigazione */
+  }
+
+.divNav {
+    padding-top: 0px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: #fff;
+    height: 100vh;
+    font-size: 0.9em;
+  }
+.divNav i{
+    font-size: 1.3em;
+    
+}
+  .navbar {
+    width: 100%; /* Aggiunto per occupare tutta la larghezza di .divNav */
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+  }
+
+  .navbar a {
+    padding: 10px;
+    text-decoration: none;
+    color: #fff;
+    display: block;
+  }
+
+  .content {
+    margin-left: 450px;
+    padding: 16px;
+  }
+  .favourite, .add, .bookmark{
+      width: 25px;
+      height: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 2%;
+      border-radius: 2px;
+      font-size: 10px;
+      
+
+  }
+
+  .favourite{
+      background-image: linear-gradient(#3C1FA8, #7B918B);
+      color: #fff;
+
+  }
+
+  .add{
+      background-color: #B2B2B2;
+      color: #000;
+
+  }
+
+  .bookmark{
+      background-color: #004537;
+      color: #149643;
+  }
+
+  .scroll{
+    margin-top: 10px;
+    overflow-y: scroll;
+    height: 60%;
+  }
+  .scrollbar-dusty-grass::-webkit-scrollbar-track {
+    border-radius: 10px;
+  }
+
+
+.scrollbar-dusty-grass::-webkit-scrollbar {
+    width: 12px;
+    background-color: #F5F5F5;
+    background-color: #212529;
+}
+
+.scrollbar-dusty-grass::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-image: -webkit-linear-gradient(330deg, #d4fc79 0%, #3fd868 100%);
+    background-image: linear-gradient(120deg, #d4fc79 0%, #3fd868 100%);
+} 
+
+
+
+
+
+.container-fluid{
+   padding: 0;
+}
+.artist-center-section{
+    background: linear-gradient(to bottom,#212121,#131313 );
+    
+}
+.artist-header {
+    width: 100%;
+    height: 35%;
+    position: relative;
+    min-height: 120px;
+}
+.artist-header img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+.artist-header-content {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding-bottom: 20px;
+}
+.artist-header-content svg {
+    color: #5C92FE;
+}
+
+.artist-brano-photo{
+    position: relative;
+}
+.artist-like-icon{
+    position: absolute;
+    text-align: center;
+    height: 35px;
+    width: 35px;
+    bottom:-10px;
+    right: 0;
+    background-color:#AAFFBE;
+    border: 3px solid white;
+    border-radius: 50%;
+}
+
+.artist-popolare-brani{
+    margin-inline-start: 2rem;
+}
+
+@font-face {
+    font-family: 'CircularStd';
+    src: url(./fonts/CircularStd-Medium.otf) format('otf');
+}
+
+.navDx{
+    background-color: #000;
+    width: 100%;
+    height: 100%;
+    padding: 1%;
+    color: #fff;
+    font-family: 'CircularStd', sans-serif;
+}
+
+.friendsActivity{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+li{
+    margin: 3% 0;
+}
+
+.friendsActivity h6{
+    margin: 0;
+}
+
+.myFriend{
+    display: flex;
+    align-items: center;
+    font-size: smaller;
+}
+.account{
+    width: 100%;
+    padding: 0 3%;
+    color: #ADACAD;
+}
+
+.account p{
+    margin: 2px 0;
+}
+
+.accountPic{
+    padding: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: aquamarine;
+    align-self: start;
+}
+.accountName{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
