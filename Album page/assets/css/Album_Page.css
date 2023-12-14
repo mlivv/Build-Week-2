@@ -76,12 +76,12 @@ body {
 } */
 
 .prova20{
-  height: 20%;
+  height: auto;
 }
 
  .scroll{
   overflow-y: auto;
-  height: 80%;
+  height: 100%;
 } 
 
 .scrollbar-dusty-grass::-webkit-scrollbar-track {
@@ -172,6 +172,10 @@ nav button{
 #btnPlay {
   color: #1ed760;
   border-radius: 50%;
+}
+
+.textColorSongs{
+  color:lightgrey;
 }
 
 /* FINE MAIN */
