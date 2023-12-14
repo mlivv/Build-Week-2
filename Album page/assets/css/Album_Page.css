@@ -1,25 +1,232 @@
-body{
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: rgb(209, 144, 204);
+  background: linear-gradient(
+    180deg,
+    rgba(209, 144, 204, 1) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  /* background-attachment: fixed; */
+}
+/* SIDE BAR */
+.divNav {
+  /* position: fixed; */
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #333;
+  color: #fff;
+  /* height: 100wh; */
+  font-size: 0.9em;
+}
+.divNav i {
+  font-size: 1.3em;
+}
+/* .navbar {
+   width: 100%; Aggiunto per occupare tutta la larghezza di .divNav 
+} */
+
+.navbar-nav {
+  flex-direction: column;
+}
+
+.navbar a {
+  padding: 10px;
+  text-decoration: none;
+  color: #fff;
+  display: block;
+}
+
+.content {
+  margin-left: 450px;
+  padding: 16px;
+}
+.favourite,
+.add,
+.bookmark {
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2%;
+  border-radius: 2px;
+  font-size: 10px;
+}
+
+.favourite {
+  background-image: linear-gradient(#3c1fa8, #7b918b);
+  color: #fff;
+}
+
+.add {
+  background-color: #b2b2b2;
+  color: #000;
+}
+
+.bookmark {
+  background-color: #004537;
+  color: #149643;
+}
+
+/* .prova{
+  height: 100vh;
+} */
+
+.prova20{
+  height: 20%;
+}
+
+ .scroll{
+  overflow-y: auto;
+  height: 80%;
+} 
+
+.scrollbar-dusty-grass::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+
+.scrollbar-dusty-grass::-webkit-scrollbar {
+  width: 12px;
+  background-color: #F5F5F5;
+  background-color: #333;
+}
+
+.scrollbar-dusty-grass::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+  background-image: -webkit-linear-gradient(330deg, #d4fc79 0%, #3fd868 100%);
+  background-image: linear-gradient(120deg, #d4fc79 0%, #3fd868 100%);
+} 
+
+.sidebar-wrapper{ /* Add height */
+overflow-y: auto;  /* Add overflow-y */
+overflow-x: hidden;
+height: 80%;  /* Add overflow-x */
+}
+
+/* FINE SIDE BAR*/
+/* MAIN  */
+
+
+.account-list{
+  width: 200px;
+  background-color: #000000;
+}
+
+nav ul{
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+nav button{
+  width: 200px;
+
+}
+.account-list .list-item:hover {
+  background-color: rgb(51, 51, 51); 
+}
+
+
+.link-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#linkArtista {
+  text-decoration: none;
+}
+
+.containerSongs {
+  background-color: rgba(0, 0, 0, 0.5);
+  /* height: 100%; */
+}
+
+.containerDatiAlbum {
+  display: flex;
+}
+
+.containerTestoAlbum {
+    padding-left: 20px;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 10px;
+}
+
+.btnSongs {
+  display: inline;
+  /* height: 50px; */
+  width: 50px;
+  border-radius: 50%;
+  background: none;
+  border: none;
+}
+
+#btnPlay {
+  color: #1ed760;
+  border-radius: 50%;
+}
+
+/* FINE MAIN */
+/* NAV DESTRA*/
+
+.navDx{
+   background-color: #000;
+   width: 100%;
+    height: 100%;
+    padding: 5px;
+    color: #fff;
+    font-family: 'CircularStd', sans-serif;
+}
+
+.friendsActivity{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+li{
+    margin: 3% 0;
+}
+
+.friendsActivity h6{
     margin: 0;
-    padding: 0;
-    box-sizing:border-box;
-    background: rgb(209,144,204);
-    background: linear-gradient(180deg, rgba(209,144,204,1) 0%, rgba(0,0,0,1) 100%); 
-    background-attachment: fixed;
-
 }
 
-.link-list{
-    list-style: none;
-    margin: 0;
-    padding: 0;
+.myFriend{
+    display: flex;
+    align-items: center;
+    font-size: smaller;
+}
+.account{
+    width: 100%;
+    padding: 0 3%;
+    color: #ADACAD;
 }
 
-#linkArtista{
-    text-decoration: none;
+.account p{
+    margin: 2px 0;
 }
 
-
-.containerSongs{
-    background-color: rgba(0,0,0,0.5);
-   height: 800px;
+.accountPic{
+    padding: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: aquamarine;
+    align-self: start;
 }
+.accountName{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* fine nav destra*/
