@@ -1,13 +1,15 @@
+
+@font-face {
+  font-family: 'CircularStd';
+  src: url(/assets/circular-std-medium-500.ttf);
+}
 body{
     font-size: 0.9rem;
+    font-family: "CircularStd";
+    font-weight: 100;
 }
 
 .divNav {
-    height:100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
     background-color: #000000;
     color: #fff;
     font-size: 0.9em;
@@ -86,12 +88,6 @@ body{
   height: 60%;  /* Add overflow-x */
 }
 
-section{
-    
-}
-
-
-
 #customRange3{
     width: 100%;
 }
@@ -106,16 +102,20 @@ section{
 }
 .artist-center-section{
     /*margin-bottom: 90px;*/
-    
+    padding-bottom: 100px;
   height: calc(100vh - 110px);
-   background: linear-gradient(to bottom,#212121,#131313 );
+   background: linear-gradient(to bottom,#2D2D2A,#131313);
 }
 .artist-header {
    width: 100%;
-   height: 35%;
+   height: 40%;
    position: relative;
    min-height: 200px;
 }
+.artist-header h1{
+    font-size: 80px;
+ }
+
 .artist-header img {
        opacity: 0.7;
        height: 100%;
@@ -142,25 +142,26 @@ section{
 .artist-like-icon{
    position: absolute;
    text-align: center;
-   height: 35px;
-   width: 35px;
+   height: 30px;
+   width: 30px;
    bottom:-10px;
    right: 0;
-   background-color:#AAFFBE;
-   border: 3px solid white;
+   background-color:#23BB59;
+   border: 3px solid rgb(0, 0, 0);
    border-radius: 50%;
 }
 
 .artist-popolare-brani{
-   margin-inline-start: 2rem;
+   margin-inline-start: 0.2rem;
 }
 
-
-@font-face {
-  font-family: 'CircularStd';
-  src: url(./fonts/CircularStd-Medium.otf) format('otf');
+.bi-three-dots-vertical{
+    display: none;
 }
 
+.shuffle-svg{
+  display: none;
+}
 .navDx{
   background-color: #000;
   height: 100%;
@@ -212,7 +213,14 @@ li{
   align-items: center;
 }
 
-@media screen and (max-width:769px) {
+.colonna-canzone-ascolti{
+    display: flex;
+    flex-direction: row;
+}
+@media screen and (max-width:768px) {
+  .artist-header-content h1 {
+    font-size: 60px;
+  }
     .artist-brani{
         order: 1;
     }
@@ -220,11 +228,8 @@ li{
         order: 2;
     }
     .artist-center-section{
-        height: calc(100vh - 90px);;
+        height: calc(100vh - 90px);
     }
-}
-
-@media screen and (max-width: 879px) {
     .artist-popolari{
         width: 100%;
     }
@@ -240,5 +245,71 @@ li{
     .shuffle-svg{
         display: inline-block;
     }
-
+    .bi-play-circle-fill{
+       fill: rgba(255, 255, 255, 0.84);
+    }
+    .time-text{
+        display: none;
+    }
+    .ascolti-text{
+        display: block;
+    }
+    .bi-three-dots-vertical{
+        display: inline-block;
+    }
+    .colonna-canzone-ascolti{
+        display: flex;
+        flex-direction: column;
+    }
 }
+
+
+
+.divNav, .scrollbar-dusty-grass {
+  overflow-y: auto;
+  height: calc(100vh - 460px);
+}
+.divNav{
+  overflow-y: hidden;
+  height: calc(100vh - 110px);
+}
+.playlist p {
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.playlist p {
+  color: rgba(255, 255, 255, 0.669);
+}
+.playlist p:hover {
+  color: white;
+}
+
+body {
+  overflow: hidden; 
+}
+
+.artist-popolare-brani div:hover {
+  background-color: rgb(70, 70, 70);
+  cursor: pointer;
+}
+
+.artist-popolare-brani div{
+  padding: 5px 12px;
+  border-radius: 6px;
+}
+
+svg, button{
+  transition: 0.3s;
+}
+svg:hover, button:hover{
+  transition: 0.3s;
+  opacity: 0.6;
+  cursor: pointer;
+  transform:rotate(0) scale(1.07);
+}
+
+.color-green-play{
+  color: lightgreen;
+}
+
+
