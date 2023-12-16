@@ -60,10 +60,10 @@ body{
       color: #149643;
   }
 
-  .scroll{
+  /* .scroll{
     overflow: scroll;
     height: auto;
-  }
+  } */
   .scrollbar-dusty-grass::-webkit-scrollbar-track {
     border-radius: 10px;
   }
@@ -83,7 +83,7 @@ body{
 } 
 
 .sidebar-wrapper{ /* Add height */
-  overflow-y: auto;  /* Add overflow-y */
+  overflow-y: 100%;  /* Add overflow-y */
   overflow-x: hidden;
   height: 60%;  /* Add overflow-x */
 }
