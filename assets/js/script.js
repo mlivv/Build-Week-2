@@ -74,9 +74,8 @@ function topRanked(closestSongsArray){
   let number = 1;
   closestSongsArray.forEach(element =>{
     popularSongsContainer.innerHTML += `
-    <div class="d-flex align-items-center justify-content-between" onmouseover="playButton(this)"  onmouseout="returnNormal(this)" onclick="playMusic(this);  playSongBar('${element.title}', '${element.artist.name}','${element.album.cover}')">
-    <div class="element-title d-flex align-items-center gap-3">
-        <audio src="${element.preview}" class="audio"></audio>
+    <div class="song-block d-flex align-items-center justify-content-between" onmouseover=" playButton(this)"  onmouseout="returnNormal(this)" onclick=" setSongBar(this, '${element.title}', '${element.artist.name}','${element.album.cover}','${element.preview}')">
+    <div class="element-heading d-flex align-items-center gap-3">
         <span class="fs-4 number">
           ${number} 
         </span>
@@ -108,9 +107,8 @@ function topRankedCollapsed(closestSongsArray){
   let number = 6;
   closestSongsArray.forEach(element =>{
     popularSongsContainer.innerHTML += `
-    <div class="d-flex align-items-center justify-content-between" onmouseover="playButton(this)"  onmouseout="returnNormal(this)" onclick="playMusic(this);  playSongBar('${element.title}', '${element.artist.name}','${element.album.cover}')">
-    <div class="element-title d-flex align-items-center gap-3">
-        <audio src="${element.preview}" class="audio"></audio>
+    <div class="song-block d-flex align-items-center justify-content-between" onmouseover=" playButton(this)"  onmouseout="returnNormal(this)" onclick=" setSongBar(this, '${element.title}', '${element.artist.name}','${element.album.cover}','${element.preview}')">
+    <div class="element-heading d-flex align-items-center gap-3">
         <span class="fs-4 number">
           ${number} 
         </span>
@@ -120,7 +118,7 @@ function topRankedCollapsed(closestSongsArray){
             </svg>
         </span>
         <img class="rounded-2" src="${element.album.cover}" alt="artist-album-image" height="55px">
-        <span class="fw-medium ">${element.title}</span>
+        <span class="fw-medium element-title">${element.title}</span>
     </div>
     <div class="d-flex align-items-center gap-5">
     <span class="fw-medium ascolti-text opacity-50">${element.rank.toLocaleString('it-IT', { style: 'decimal' })}</span>
@@ -134,16 +132,6 @@ function topRankedCollapsed(closestSongsArray){
     number++;
   })
 
-}
-
-
-function playButton(element){
-    element.querySelector(".number").style.display = "none";
-    element.querySelector(".play").classList.remove("d-none");
-}
-function returnNormal(element){
-  element.querySelector(".play").classList.add("d-none");
-  element.querySelector(".number").style.display = "inline-block";
 }
 
 function playMusic(element) {
@@ -162,7 +150,7 @@ function playMusic(element) {
     <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.25 5C5.56 5 5 5.56 5 6.25v3.5a1.25 1.25 0 1 0 2.5 0v-3.5C7.5 5.56 6.94 5 6.25 5m3.5 0c-.69 0-1.25.56-1.25 1.25v3.5a1.25 1.25 0 1 0 2.5 0v-3.5C11 5.56 10.44 5 9.75 5"/>
   </svg>
     `;
-
+  
   } else {
     audio.pause();
     element.querySelector(".element-title").classList.remove("color-green-play");
@@ -177,8 +165,68 @@ function playMusic(element) {
   </svg>
     `;
   }
-}
+  }
+  
+  let lastElement = null;
 
+  function setSongBar(currentElement, title, name, cover, previewAudio) {
+    if (lastElement !== currentElement) {
+      if (lastElement) {
+        lastElement.querySelector(".element-heading").classList.remove("color-green-play");
+        lastElement.querySelector(".play").innerHTML = `
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
+            <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
+          </svg>
+        `;
+      }
+  
+      currentElement.querySelector(".element-heading").classList.add("color-green-play");
+      lastElement = currentElement;
+  
+      document.getElementById("album-cover-bar").innerHTML = `<img src="${cover}" alt="artist-album-image" height="60px">`;
+      document.getElementById("title-artist-bar").innerHTML = name;
+      document.getElementById("title-song-bar").innerHTML = title;
+      document.getElementById("current-audio-played").innerHTML = `<audio src="${previewAudio}" class="audio"></audio>`;
+    }
+    
+    playMusic();
+  }
+  
+  
+  
+  let AudioIsPlaying = false;
+  function playMusic() {
+    let element = lastElement;
+    let audio =  document.querySelector(".audio");
+    if (!AudioIsPlaying) {
+      audio.play();
+      element.querySelector(".play").innerHTML = `
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-pause-fill" viewBox="0 0 16 16">
+      <path d="M5.5 3.5A1.5 1.5 0 0 1 7 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5m5 0A1.5 1.5 0 0 1 12 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5"/>
+    </svg>
+      `;
+      document.getElementById("play-icon-bar").innerHTML = `
+      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="white" class="bi bi-pause-circle-fill" viewBox="0 0 16 16">
+      <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.25 5C5.56 5 5 5.56 5 6.25v3.5a1.25 1.25 0 1 0 2.5 0v-3.5C7.5 5.56 6.94 5 6.25 5m3.5 0c-.69 0-1.25.56-1.25 1.25v3.5a1.25 1.25 0 1 0 2.5 0v-3.5C11 5.56 10.44 5 9.75 5"/>
+    </svg>
+      `;
+     AudioIsPlaying = true;
+    
+    } else {
+      audio.pause();
+      element.querySelector(".play").innerHTML = `
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
+      <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
+      </svg>
+      `;
+      document.getElementById("play-icon-bar").innerHTML = `
+      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="white" class="bi bi-play-circle-fill" viewBox="0 0 16 16">
+      <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5"/>
+    </svg>
+      `;
+     AudioIsPlaying = false;
+    }
+    }
 
 function timeConvert(num)
 {
@@ -190,7 +238,7 @@ seconds = + seconds * 10 ;
 return minutes + ":" + seconds;
 }
 
-function playSongBar(name, title,cover){
+function playSongBar(title,name,cover){
   document.getElementById("album-cover-bar").innerHTML = `<img src="${cover}" alt="artist-album-image" height="60px">`;
   document.getElementById("title-artist-bar").innerHTML = name;
   document.getElementById("title-song-bar").innerHTML = title;
@@ -209,3 +257,15 @@ function showMoreSongs(){
     collapse = false;
   }
 }
+
+
+
+function playButton(element){
+  element.querySelector(".number").style.display = "none";
+  element.querySelector(".play").classList.remove("d-none");
+}
+function returnNormal(element){
+element.querySelector(".play").classList.add("d-none");
+element.querySelector(".number").style.display = "inline-block";
+}
+

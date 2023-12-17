@@ -293,7 +293,7 @@
                             <div class="d-flex justify-content-center align-items-center gap-4 mb-3">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" id="shuffle" width="26" height="26"><rect width="26" height="26" fill="none"></rect><path  fill="none" stroke="lightgreen" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" d="M32,72H55.06445a64,64,0,0,1,52.079,26.80076l41.7132,58.39848A64,64,0,0,0,200.93555,184H232"></path><polyline fill="none" stroke="lightgreen" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" points="208 48 232 72 208 96"></polyline><polyline fill="none" stroke="lightgreen" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" points="208 160 232 184 208 208"></polyline><path fill="none" stroke="lightgreen" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" d="M147.66275 100.47214l1.19385-1.67138A64 64 0 0 1 200.93555 72H232M32 184H55.06445a64 64 0 0 0 52.079-26.80076l1.19384-1.67138"></path></svg>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="white" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-skip-back"><polygon points="19 20 9 12 19 4 19 20"/><line x1="5" y1="19" x2="5" y2="5"/></svg>
-                                    <div id="play-icon-bar">
+                                    <div id="play-icon-bar" onclick="playMusic()">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="white" class="bi bi-play-circle-fill" viewBox="0 0 16 16">
                                             <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5"/>
                                         </svg>
@@ -317,6 +317,7 @@
                         
                         </div>
                </div>
+               <span id="current-audio-played"></span>
             </div>
         </div>
     </div>
