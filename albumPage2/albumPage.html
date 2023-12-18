@@ -187,31 +187,24 @@
             <!--fine top row -->
           </div>
           <!--inizio row album + link artist page (da aggiungere ancora)-->
-          <div>
-            <div class="mt-4 containerDatiAlbum ps-4">
-              <img
-                src="./assets/imgs/Taylor-Swift-Lover-album-cover-820.webp"
-                alt=""
-                width="20%"
-              />
-
-              <div class="containerTestoAlbum">
-                <h2 class="text-white small">ALBUM</h2>
-                <h1 class="text-white">NOME ALBUM</h1>
-                <div class="align-items-center">
-                  <a
-                    href="#"
-                    class="d-flex text-white align-items-center"
-                    id="linkArtista"
-                  >
-                    <img
-                      src="./assets/imgs/ab67616100005174859e4c14fa59296c8649e0e4.jpg"
-                      class="rounded-circle me-3"
-                      width="10%"
-                    />
-                    <p>Artista</p>
-                  </a>
-                </div>
+          <div class="mt-4 ps-4" id="containerDatiAlbum">
+            <img id="album_Cover" />
+            <div id="containerTestoAlbum">
+              <h2 class="text-white small">ALBUM</h2>
+              <h1 class="text-white" id="album_Name">NOME ALBUM</h1>
+              <div class="align-items-center">
+                <a
+                  href="#"
+                  class="d-flex text-white align-items-center"
+                  id="linkArtista"
+                >
+                  <img
+                    src="./assets/imgs/ab67616100005174859e4c14fa59296c8649e0e4.jpg"
+                    class="rounded-circle me-3"
+                    width="10%"
+                  />
+                  <p class="artist_Name">Artista</p>
+                </a>
               </div>
             </div>
           </div>
@@ -310,46 +303,11 @@
                   </svg>
                 </div>
                 <hr class="text-white" />
+              </div>  
                 <!-- canzoni -->
-                <div class="col-1">
-                  <p class="textColorSongs">1</p>
+                <div id="boxSongs">
+                  <!--popolato con js-->
                 </div>
-                <div class="col-5">
-                  <p class="small textColorSongs">I Forgot That You Existed</p>
-                </div>
-                <div class="col-4">
-                  <p class="small textColorSongs">213.972</p>
-                </div>
-                <div class="col-2">
-                  <p class="timeSong small textColorSongs">2:50</p>
-                </div>
-                <div class="col-1">
-                  <p class="textColorSongs">2</p>
-                </div>
-                <div class="col-5">
-                  <p class="small textColorSongs">Canzone</p>
-                </div>
-                <div class="col-4">
-                  <p class="small textColorSongs">RIPRODUZIONI</p>
-                </div>
-                <div class="col-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="bi bi-clock textColorSongs"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"
-                    />
-                    <path
-                      d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"
-                    />
-                  </svg>
-                </div>
-              </div>
             </div>
           </div>
           <!-- canzoni -->
@@ -674,5 +632,6 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
+    <script src="./assets/js/albumpage.js"></script>
   </body>
 </html>
