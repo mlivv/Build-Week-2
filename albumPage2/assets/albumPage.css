@@ -129,11 +129,11 @@ nav button {
   height: 70%; 
 }
 
-.containerDatiAlbum {
+#containerDatiAlbum {
   display: flex;
 }
 
-.containerTestoAlbum {
+#containerTestoAlbum {
   padding-left: 20px;
   bottom: 0;
   display: flex;
