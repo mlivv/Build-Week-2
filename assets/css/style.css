@@ -60,10 +60,6 @@ body{
       color: #149643;
   }
 
-  /* .scroll{
-    overflow: scroll;
-    height: auto;
-  } */
   .scrollbar-dusty-grass::-webkit-scrollbar-track {
     border-radius: 10px;
   }
@@ -257,12 +253,7 @@ li{
     .bi-three-dots-vertical{
         display: inline-block;
     }
-    .colonna-canzone-ascolti{
-        display: flex;
-        flex-direction: column;
-    }
 }
-
 
 
 .divNav, .scrollbar-dusty-grass {

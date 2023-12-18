@@ -5,8 +5,15 @@ let id = "4050205"
 
 let tracklist = [];
 
-show();
-let artist = {};
+/* const searchParams = new URLSearchParams(window.location.search)
+console.log(URLSearchParams);
+const id = searchParams.get("Id") */
+
+window.onload = () => {
+  show();
+}
+
+
 function show(){
     fetch(url + id, {
         method: "GET",
@@ -85,10 +92,14 @@ function topRanked(closestSongsArray){
             </svg>
         </span>
         <img class="rounded-2" src="${element.album.cover}" alt="artist-album-image" height="55px">
+
+        <div class=" d-flex flex-column px-0">
         <span class="fw-medium element-title">${element.title}</span>
+        <span class="d-inline-block d-md-none fw-medium ascolti-text opacity-50">${element.rank.toLocaleString('it-IT', { style: 'decimal' })}</span>
+        </div>
     </div>
     <div class="d-flex align-items-center gap-5">
-    <span class="fw-medium ascolti-text opacity-50">${element.rank.toLocaleString('it-IT', { style: 'decimal' })}</span>
+    <span class="d-none d-md-inline-block fw-medium ascolti-text opacity-50">${element.rank.toLocaleString('it-IT', { style: 'decimal' })}</span>
       <span class="fw-medium time-text opacity-50">${timeConvert(element.duration)}</span>
       <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
           <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
