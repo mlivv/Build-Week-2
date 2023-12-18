@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en"  data-bs-theme="dark">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+  
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+<div class="sidebar-wrapper container-fluid search-page-container">
+    <h1>Cerca</h1>
+    <div class="d-flex align-items-center">
+        <svg onclick="history.back()"  xmlns="http://www.w3.org/2000/svg"
+        width="30"
+        height="30"
+        fill="currentColor"
+        class="bi bi-arrow-left-circle text-white me-3"
+        viewBox="0 0 16 16">
+        <path fill-rule="evenodd"
+          d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z" />
+      </svg>
+
+
+      <svg class="opacity-50" xmlns="http://www.w3.org/2000/svg"
+        width="30"
+        height="30"
+        fill="currentColor"
+        class="bi bi-arrow-right-circle text-white"
+        viewBox="0 0 16 16">
+        <path fill-rule="evenodd"
+          d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z" />
+      </svg>
+      <div class="form position-relative rounded-5 ms-4">
+        <i class="bi bi-search position-absolute btn border-0 p-2" ></i>
+        <input type="text" class="form-control form-input rounded-2 border-0 ps-5 py-2" placeholder="Cosa vuoi ascoltare?">
+      </div>
+</div>
+<div class="container-fluid sfoglia-tutto-section">
+    <h3 class="my-4 text-center">Sfoglia tutto</h3>
+    <div class="row row-cols-2  row-cols-md-3 row-cols-lg-4 row-cols-xxl-5 row-cols-xxl-6 g-3 row-gap-2">
+        <div class="col">
+            <div class="card" style="background-color: #E13300;">
+            <img src="https://media.discordapp.net/attachments/1184181583788376166/1186245627026362398/image-2.jpg?ex=65928c54&is=65801754&hm=8eccb6c40ba08ce084ed74dd8589e08a2f64e209f682277bcc73cd214d09b12f&=&format=webp&width=450&height=450" class="" alt="...">
+            <div class="card-img-overlay">
+                <h3>Podcast</h3>
+            </div>
+            </div>
+        </div>
+       <div class="col">
+            <div class="card" style="background-color: #1E3264;">
+            <img src="https://media.discordapp.net/attachments/1184181583788376166/1186245627315752982/image-42.png?ex=65928c54&is=65801754&hm=9ab84986462cc41567d8ec5be98e5ee54d8ce080bcdfac1f17397466f3da1730&=&format=webp&quality=lossless&width=300&height=300" class="" alt="...">
+            <div class="card-img-overlay">
+                <h3>Create per te</h3>
+            </div>
+            </div>
+       </div>
+       <div class="col">
+        <div class="card " style="background-color:#E8115C;">
+        <img src="https://media.discordapp.net/attachments/1184181583788376166/1186245627580002365/image-26.jpg?ex=65928c54&is=65801754&hm=bcdb13831ba2ab0c123d9afbae25b5d0e08efc91a61f54019aadfc492fbd6fe3&=&format=webp&width=450&height=450" class="" alt="...">
+        <div class="card-img-overlay">
+            <h3>Nuove uscite</h3>
+        </div>
+        </div>
+        </div>
+        <div class="col">
+            <div class="card" style="background-color: #158A08;">
+            <img src="https://media.discordapp.net/attachments/1184181583788376166/1186245627840057435/image-47.jpg?ex=65928c55&is=65801755&hm=4218af93c693c52695e65b7d4cb9e2dce205c0c8e29fc29d551bd7414da6804f&=&format=webp&width=450&height=450" class="" alt="...">
+            <div class="card-img-overlay">
+                <h3>Pop</h3>
+            </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card" style="background-color: #BC5800;">
+            <img src="https://media.discordapp.net/attachments/1184181583788376166/1186245628112670740/image-49.jpg?ex=65928c55&is=65801755&hm=1f1570f39c1a1532c8ac4ac0062eec0e48bbbb51b73abbc46645bdf245647072&=&format=webp&width=450&height=450" class="" alt="...">
+            <div class="card-img-overlay">
+                <h3>Hip Hop</h3>
+            </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card" style="background-color: #E1118B;">
+            <img src="https://media.discordapp.net/attachments/1184181583788376166/1186245628347559946/image-5.jpg?ex=65928c55&is=65801755&hm=94b31a5768a33d1206fa7bba88f2044526a874d50207c0623b360595b446004c&=&format=webp&width=300&height=300" class="" alt="...">
+            <div class="card-img-overlay">
+                <h3>Latina</h3>
+            </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card " style="background-color: #8C67AC;">
+            <img src="https://media.discordapp.net/attachments/1184181583788376166/1186245628599226509/image-14.jpg?ex=65928c55&is=65801755&hm=2c954aa35015588b32c83ae75faceed3e8c12a7ecfa837c074225f949ec852bb&=&format=webp&width=450&height=450" class="" alt="...">
+            <div class="card-img-overlay">
+                <h3>Classifiche</h3>
+            </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card " style="background-color: #D84000">
+            <img src="https://media.discordapp.net/attachments/1184181583788376166/1186245628829896734/image-12.jpg?ex=65928c55&is=65801755&hm=da907870d4e5bc0a9eefb15445de7d0b0768089b83b9b7ce1b794679abc67599&=&format=webp&width=300&height=300" class="" alt="...">
+            <div class="card-img-overlay">
+                <h3>Pop Mix</h3>
+            </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card" style="background-color: #8c67ac77;">
+            <img src="https://media.discordapp.net/attachments/1184181583788376166/1186245629127700520/image-30.jpg?ex=65928c55&is=65801755&hm=fb8f8adddf4edaf9c759d18006646c849454915e3b4c5f1d4fc713b914042b50&=&format=webp&width=450&height=450" class="" alt="...">
+            <div class="card-img-overlay">
+                <h3>Official</h3>
+            </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card" style="background-color: #d27a2e;">
+            <img src="https://media.discordapp.net/attachments/1184181583788376166/1186245629391949885/image-31.jpg?ex=65928c55&is=65801755&hm=de60436d4a616e60035f63fb3db348c1c967b19a91454c44a8bce48177522298&=&format=webp&width=450&height=450" class="" alt="...">
+            <div class="card-img-overlay">
+                <h3>Metal</h3>
+            </div>
+            </div>
+        </div>
+
+</div>
+       
+</div>
+</html>
