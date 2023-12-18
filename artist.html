@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en"  data-bs-theme="dark">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row g-0">
+            <div class="d-none d-lg-block col-md-2 divNav text-white p-3">
+                <nav class="navbar navbar-expand-lg navbar-dark ">
+                    <!-- Toggler per dispositivi di dimensioni ridotte 
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>-->
+    
+                    <!-- Contenuto della barra di navigazione -->
+                    <div>
+                        <ul class="navbar-nav flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-house-heart"></i>
+                                    Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><i class="bi bi-search"></i> Search</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><i class="bi bi-collection"></i> La tua Libreria</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <div>
+                    <section>
+                        <div class="d-flex flex-column ">
+                            <div class="d-flex align-items-center ">
+                                <div class="add">
+                                    <i class="bi bi-plus"></i>
+    
+                                </div>
+                                <b class="m-0">Crea la tua playlist</b>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <div class="favourite">
+                                    <i class="bi bi-heart-fill"></i>
+                                </div>
+                                <b class="m-0">Brani che ti piacciono</b>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <div class="bookmark">
+                                    <i class="bi bi-bookmark-fill"></i>
+                                </div>
+                                <b class="m-0">Le tue Playlist</b>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <hr>
+    
+    
+                <div class="scrollbar-dusty-grass">
+                    <div  class="playlist">
+                        <p> Prof Ivan santo subito &#128131;&#128591; </p>
+                        <p> Pippo &#128054; Pluto  &#128021; e Paperino &#129414;  </p>
+                        <p> &#128076;&#128072;&#128064; </p>
+                        <p> ThEy aRe TaKinG tHe hObBits to IsEnGard &#129501;&#127996; </p>
+                        <p> WHY IS THE RUM GONE &#129324; </p>
+                        <p> PIRIPIRIPIRI &#127930;</p>
+                        <p> World domination background music &#129412;  </p>
+                        <p> mi sto annoiando &#128117; </p>
+                        <p> Prof Ivan santo subito &#128131;&#128591; </p>
+                        <p> Pippo &#128054; Pluto  &#128021; e Paperino &#129414;  </p>
+                        <p> &#128076;&#128072;&#128064; </p>
+                        <p> ThEy aRe TaKinG tHe hObBits to IsEnGard &#129501;&#127996; </p>
+                        <p> WHY IS THE RUM GONE &#129324; </p>
+                        <p> PIRIPIRIPIRI &#127930;</p>
+                        <p> World domination background music &#129412;  </p>
+                        <p> mi sto annoiando &#128117; </p>
+                        <p> div..div ovunque </p>
+                        <p> js di &#128169; </p>
+                        <p> js di &#128169; </p>
+                        <p> js di &#128169; </p>
+                        <p> js di &#128169; </p>
+                        <p> js di &#128169; </p>
+                        <p> js di &#128169; </p>
+                        <p> js di &#128169; </p>
+                        <p> js di &#128169; </p>
+                        <p> js di &#128169; </p>
+                    </div>
+                </div>
+            </div>
+        <main class="sidebar-wrapper col-12 col-lg-8 artist-center-section">
+            <div class="artist-header">
+                <img id="artist-banner" src="https://therockrevival.com/wp-content/uploads/2023/02/308707431_623756372436903_6197440860849993096_n.jpg" alt="artist banner">
+                <div class="artist-header-content ms-3">
+                    <div class="artist-verified text-white fw-bold">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-patch-check " viewBox="0 0 16 16">
+                            <path d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01-.622-.636zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708z"/>
+                          </svg>
+                        Artista Verificato
+                    </div>
+                    <h1 class="text-white artist-name"> </h1>
+                    <div class="monthly__listeners text-white fw-bold">
+                        <span class="listeners opacity-50"> <span id="listeners"></span> ascoltatori mensili</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row py-4 px-4">
+                <div class="artist-seguiti-section d-flex align-items-center">
+                    <div class="play-svg">
+                        <svg class="shuffle-svg me-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" id="shuffle" width="26" height="26"><rect width="26" height="26" fill="none"></rect><path  fill="none" stroke="lightgreen" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" d="M32,72H55.06445a64,64,0,0,1,52.079,26.80076l41.7132,58.39848A64,64,0,0,0,200.93555,184H232"></path><polyline fill="none" stroke="lightgreen" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" points="208 48 232 72 208 96"></polyline><polyline fill="none" stroke="lightgreen" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" points="208 160 232 184 208 208"></polyline><path fill="none" stroke="lightgreen" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" d="M147.66275 100.47214l1.19385-1.67138A64 64 0 0 1 200.93555 72H232M32 184H55.06445a64 64 0 0 0 52.079-26.80076l1.19384-1.67138"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="lightgreen" class="bi bi-play-circle-fill rounded-5" viewBox="0 0 16 16" >
+                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <button class="btn btn-outline-light rounded-0 py-1 mx-4">FOLLOWING</button>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16">
+                            <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="row gap-2 px-4 ">
+                <div class="artist-popolari artist-popolari-collapse col-12 col-lg-7">
+                    <h3 class="my-3 fw-bolder">Popolari</h3>
+                    <div class="artist-popolare-brani" id="artist-popolare-brani">
+
+                    </div>
+
+                    <div class="artist-popolare-brani d-none" id="braniCollapse">
+
+                    </div>    
+                    <p class="fw-medium ms-3 my-3 " role="button" id="visualizza-altro" onclick="showMoreSongs()">VISUALIZZA ALTRO</p>
+                
+                </div>
+                <div class="artist-brani col-12 col-lg-4">
+                    <h3 class="mb-4 fw-bolder">Brani che ti piacciono</h3>
+                    <div class="d-flex align-items-center gap-3">
+                        <div class="artist-brano-photo">
+                            <img id="artist-icon" src="https://i.scdn.co/image/ab6761610000e5eb952381a70ceeda02554ad545" alt="" class="rounded-circle" height="80px">
+                            <div class="artist-like-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-heart-fill mt-1" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="fw-bold mb-1">Hai messo Mi piace a 11 brani</p>
+                            <small>Di <span class="artist-name"> </span></small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    <div class="col-md-2 d-none d-lg-block">
+        <div class="navDx">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                  <div class="friendsActivity">
+                      <h6><b>Attività amici</b></h6>
+                      <div>
+                        <i class="bi bi-person-add"></i>
+                        <i class="bi bi-x"></i>
+                      </div>
+                  </div>
+                
+                </li>
+                
+                <li class="nav-item">
+                  <div class="myFriend">
+                      <div class="accountPic"></div>
+                    
+                      <div class="account">
+                          <div class="accountName">
+                            <p><b>Milena</b></p>
+                            <small>2 ore</small>
+                          </div>
+
+                          <small><i class="bi bi-music-note-beamed"></i> All too well (10 minutes version) <b>·</b> Taylor Swift</small>
+
+                          <p><i class="bi bi-vinyl"></i> RED</p>
+
+                      </div>
+
+                  </div>
+                </li>
+               
+                <li class="nav-item">
+                  <div class="myFriend">
+                      <div class="accountPic"></div>
+                    
+                      <div class="account">
+                          <div class="accountName">
+                            <p><b>PinkSloth</b></p>
+                            <small>2 ore</small>
+                          </div>
+
+                          <small><i class="bi bi-music-note-beamed"></i> Dune <b>·</b> ATEEZ</small>
+
+                          <p><i class="bi bi-vinyl"></i> THE WORLD EP.2: OUTLAW</p>
+
+                      </div>
+
+                  </div>
+                </li>
+
+                <li class="nav-item">
+                  <div class="myFriend">
+                      <div class="accountPic"></div>
+                    
+                      <div class="account">
+                          <div class="accountName">
+                            <p><b>Soulsilent</b></p>
+                            <small>2 ore</small>
+                          </div>
+
+                          <small><i class="bi bi-music-note-beamed"></i> All too well (10 minutes version) <b>·</b> Taylor Swift</small>
+
+                          <p><i class="bi bi-vinyl"></i> RED</p>
+
+                      </div>
+
+                  </div>
+                </li>
+
+                <li class="nav-item">
+                  <div class="myFriend">
+                      <div class="accountPic"></div>
+                    
+                      <div class="account">
+                          <div class="accountName">
+                            <p><b>Surf sulle spalle</b></p>
+                            <small>2 ore</small>
+                          </div>
+
+                          <small><i class="bi bi-music-note-beamed"></i> All too well (10 minutes version) <b>·</b> Taylor Swift</small>
+
+                          <p><i class="bi bi-vinyl"></i> RED</p>
+
+                      </div>
+
+                  </div>
+                </li>
+
+                <li class="nav-item">
+                  <div class="myFriend">
+                      <div class="accountPic"></div>
+                    
+                      <div class="account">
+                          <div class="accountName">
+                            <p><b>Paola</b></p>
+                            <small>2 ore</small>
+                          </div>
+
+                          <small><i class="bi bi-music-note-beamed"></i> All too well (10 minutes version) <b>·</b> Taylor Swift</small>
+
+                          <p><i class="bi bi-vinyl"></i> RED</p>
+
+                      </div>
+
+                  </div>
+                </li>
+                
+              </ul>
+      </div>
+    </div>
+    </div>
+    <div class="row mx-0">
+        <div class="col-12 artist-barra border border-dark">
+            <div class="row align-items-center">
+                        <div class="col-12 col-md-4 d-flex align-items-center">
+                            <div class="align-self-start me-2" id="album-cover-bar">
+                                <img src="https://marcheinfinite.com/wp-content/uploads/2023/12/unnamed-44.jpg" alt="artist-album-image" height="60px">
+                            </div>
+                            <div class="align-self-center d-flex flex-column my-0 me-4">
+                                    <span class="fw-medium mb-0" id="title-song-bar">All I Want For Christmas Is You</span>
+                                    <small id="title-artist-bar">By Gerry Scotti</small>
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+                                <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
+                              </svg>
+                        </div>
+                        <div class="d-none d-md-block  col-md-4 d-flex flex-column">
+                            <div class="d-flex justify-content-center align-items-center gap-4 mb-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" id="shuffle" width="26" height="26"><rect width="26" height="26" fill="none"></rect><path  fill="none" stroke="lightgreen" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" d="M32,72H55.06445a64,64,0,0,1,52.079,26.80076l41.7132,58.39848A64,64,0,0,0,200.93555,184H232"></path><polyline fill="none" stroke="lightgreen" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" points="208 48 232 72 208 96"></polyline><polyline fill="none" stroke="lightgreen" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" points="208 160 232 184 208 208"></polyline><path fill="none" stroke="lightgreen" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" d="M147.66275 100.47214l1.19385-1.67138A64 64 0 0 1 200.93555 72H232M32 184H55.06445a64 64 0 0 0 52.079-26.80076l1.19384-1.67138"></path></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="white" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-skip-back"><polygon points="19 20 9 12 19 4 19 20"/><line x1="5" y1="19" x2="5" y2="5"/></svg>
+                                    <div id="play-icon-bar" onclick="playMusic()">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="white" class="bi bi-play-circle-fill" viewBox="0 0 16 16">
+                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5"/>
+                                        </svg>
+                                    </div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-skip-forward"><polygon points="5 4 15 12 5 20 5 4"/><line x1="19" y1="5" x2="19" y2="19"/></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="lightgreen" class="bi bi-repeat" viewBox="0 0 16 16">
+                                        <path d="M11 5.466V4H5a4 4 0 0 0-3.584 5.777.5.5 0 1 1-.896.446A5 5 0 0 1 5 3h6V1.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192Zm3.81.086a.5.5 0 0 1 .67.225A5 5 0 0 1 11 13H5v1.466a.25.25 0 0 1-.41.192l-2.36-1.966a.25.25 0 0 1 0-.384l2.36-1.966a.25.25 0 0 1 .41.192V12h6a4 4 0 0 0 3.585-5.777.5.5 0 0 1 .225-.67Z"/>
+                                      </svg>
+                            </div>
+                            <input type="range" min="0" max="5" step="0.3" id="customRange3">
+                        </div>
+                        <div class="d-none d-md-block col-md-4 align-self-center">
+                            <div class=" d-flex align-items-center gap-3 justify-content-end">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#909090"  viewBox="0 0 24 24"><path d="M22,4H2A1,1,0,0,0,1,5v6a1,1,0,0,0,1,1H22a1,1,0,0,0,1-1V5A1,1,0,0,0,22,4Zm-1,6H3V6H21Zm2,5a1,1,0,0,1-1,1H2a1,1,0,0,1,0-2H22A1,1,0,0,1,23,15Zm0,4a1,1,0,0,1-1,1H2a1,1,0,0,1,0-2H22A1,1,0,0,1,23,19Z"/></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#909090" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-volume-2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                                <input type="range" min="0" max="5" step="0.3" id="customRange">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#909090" class="bi bi-arrows-angle-expand" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707zm4.344-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707"/>
+                                </svg>
+                            </div>
+                        
+                        </div>
+               </div>
+               <span id="current-audio-played"></span>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+        <script src="assets/js/script.js"></script>
+</body>
+
+</html>
