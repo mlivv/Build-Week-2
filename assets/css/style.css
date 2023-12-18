@@ -7,6 +7,7 @@ body{
     font-size: 0.9rem;
     font-family: "CircularStd";
     font-weight: 100;
+    background-color: #121212;
 }
 
 .divNav {
@@ -60,10 +61,6 @@ body{
       color: #149643;
   }
 
-  /* .scroll{
-    overflow: scroll;
-    height: auto;
-  } */
   .scrollbar-dusty-grass::-webkit-scrollbar-track {
     border-radius: 10px;
   }
@@ -257,12 +254,32 @@ li{
     .bi-three-dots-vertical{
         display: inline-block;
     }
-    .colonna-canzone-ascolti{
-        display: flex;
-        flex-direction: column;
+    .sfoglia-tutto-section .card{
+      overflow: hidden;
+      object-fit: cover;
+      height: 140px;
+      width: 100%;
+      min-width: 200px;
+      max-width: 260px;
+      border-radius: 10px;
+      border: none;
+    }
+    .sfoglia-tutto-section .card img{
+      position: absolute;
+      right: -14%;
+      bottom: -3%;
+      z-index: 0;
+      width: 7rem;
+      overflow: auto;
+      border-radius: 10px;
+      transform: rotate(25deg);
+      border-radius: 20px;
+      box-shadow: -3px 3px 10px rgba(0, 0, 0, 0.742);
+    }
+    .sfoglia-tutto-section .card h3{
+      font-size: 22px;
     }
 }
-
 
 
 .divNav, .scrollbar-dusty-grass {
@@ -298,7 +315,7 @@ body {
   border-radius: 6px;
 }
 
-svg, button{
+svg, button,  .card{
   transition: 0.3s;
 }
 svg:hover, button:hover{
@@ -313,3 +330,43 @@ svg:hover, button:hover{
 }
 
 
+.search-page-container{
+  padding:20px 30px;
+
+}
+
+@media screen and (min-width:768px) {
+  .sfoglia-tutto-section .card{
+    overflow: hidden;
+    object-fit: cover;
+    height: 240px;
+    width: 100%;
+    max-width: 340px;
+    max-height: 340px;
+    border-radius: 10px;
+    border: none;
+  }
+  .sfoglia-tutto-section .card img{
+    position: absolute;
+    right: -12%;
+    bottom: -3%;
+    z-index: 0;
+    width: 10rem;
+    overflow: auto;
+    border-radius: 10px;
+    transform: rotate(25deg);
+    border-radius: 20px;
+    box-shadow: -3px 3px 10px rgba(0, 0, 0, 0.742);
+  }
+}
+
+.card{
+  transition: 0.3s;
+  opacity: 0.8;
+}
+.card:hover{
+  transition: 0.3s;
+  cursor: pointer;
+  transform:rotate(0) scale(1.07);
+  opacity: 1;
+}
