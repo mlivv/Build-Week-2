@@ -27,7 +27,9 @@ function getAlbum() {
     .then((data) => {
       let album = data;
       console.log(album);
+
       popolaBanner(data);
+
       popolaCanzoni(data);
     })
     .catch((err) => console.log("Fetch error:", err));
@@ -44,6 +46,7 @@ function popolaBanner(artista) {
   })
     .then((res) => res.json())
     .then((data) => {
+
       let album = data;
       let artist = data.artist;
       let releaseDate = album.release_date;
@@ -99,6 +102,7 @@ function popolaCanzoni(artista) {
   })
     .then((res) => res.json())
     .then((data) => {
+
       let album = data;
       let tracklist = data.tracks.data;
       let artist = data.artist;
