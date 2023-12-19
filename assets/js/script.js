@@ -129,10 +129,14 @@ function topRankedCollapsed(closestSongsArray){
             </svg>
         </span>
         <img class="rounded-2" src="${element.album.cover}" alt="artist-album-image" height="55px">
+
+        <div class=" d-flex flex-column px-0">
         <span class="fw-medium element-title">${element.title}</span>
+        <span class="d-inline-block d-md-none fw-medium ascolti-text opacity-50">${element.rank.toLocaleString('it-IT', { style: 'decimal' })}</span>
+        </div>
     </div>
     <div class="d-flex align-items-center gap-5">
-    <span class="fw-medium ascolti-text opacity-50">${element.rank.toLocaleString('it-IT', { style: 'decimal' })}</span>
+    <span class="d-none d-md-inline-block fw-medium ascolti-text opacity-50">${element.rank.toLocaleString('it-IT', { style: 'decimal' })}</span>
       <span class="fw-medium time-text opacity-50">${timeConvert(element.duration)}</span>
       <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
           <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
@@ -145,38 +149,6 @@ function topRankedCollapsed(closestSongsArray){
 
 }
 
-function playMusic(element) {
-  const audio = element.querySelector(".audio");
-  audio.autoplay = !audio.autoplay;
-  if (!audio.autoplay) {
-    audio.play();
-    element.querySelector(".element-title").classList.add("color-green-play");
-    element.querySelector(".play").innerHTML = `
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-pause-fill" viewBox="0 0 16 16">
-    <path d="M5.5 3.5A1.5 1.5 0 0 1 7 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5m5 0A1.5 1.5 0 0 1 12 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5"/>
-  </svg>
-    `;
-    document.getElementById("play-icon-bar").innerHTML = `
-    <svg onclick = "playBarSong()" xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="white" class="bi bi-pause-circle-fill" viewBox="0 0 16 16">
-    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.25 5C5.56 5 5 5.56 5 6.25v3.5a1.25 1.25 0 1 0 2.5 0v-3.5C7.5 5.56 6.94 5 6.25 5m3.5 0c-.69 0-1.25.56-1.25 1.25v3.5a1.25 1.25 0 1 0 2.5 0v-3.5C11 5.56 10.44 5 9.75 5"/>
-  </svg>
-    `;
-  
-  } else {
-    audio.pause();
-    element.querySelector(".element-title").classList.remove("color-green-play");
-    element.querySelector(".play").innerHTML = `
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
-    <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
-    </svg>
-    `;
-    document.getElementById("play-icon-bar").innerHTML = `
-    <svg onclick = "playBarSong()" xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="white" class="bi bi-play-circle-fill" viewBox="0 0 16 16">
-    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5"/>
-  </svg>
-    `;
-  }
-  }
   
   let lastElement = null;
 
@@ -216,11 +188,14 @@ function playMusic(element) {
       <path d="M5.5 3.5A1.5 1.5 0 0 1 7 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5m5 0A1.5 1.5 0 0 1 12 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5"/>
     </svg>
       `;
-      document.getElementById("play-icon-bar").innerHTML = `
+      let playIcons = document.querySelectorAll(".play-icon-bar")
+     playIcons.forEach(element => {
+      element.innerHTML = `
       <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="white" class="bi bi-pause-circle-fill" viewBox="0 0 16 16">
       <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.25 5C5.56 5 5 5.56 5 6.25v3.5a1.25 1.25 0 1 0 2.5 0v-3.5C7.5 5.56 6.94 5 6.25 5m3.5 0c-.69 0-1.25.56-1.25 1.25v3.5a1.25 1.25 0 1 0 2.5 0v-3.5C11 5.56 10.44 5 9.75 5"/>
     </svg>
       `;
+     }); 
      AudioIsPlaying = true;
     
     } else {
@@ -230,11 +205,14 @@ function playMusic(element) {
       <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
       </svg>
       `;
-      document.getElementById("play-icon-bar").innerHTML = `
-      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="white" class="bi bi-play-circle-fill" viewBox="0 0 16 16">
-      <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5"/>
-    </svg>
-      `;
+      let pauseIcons = document.querySelectorAll(".play-icon-bar")
+      pauseIcons.forEach(element => {
+       element.innerHTML = `
+       <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="white" class="bi bi-play-circle-fill" viewBox="0 0 16 16">
+       <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5"/>
+     </svg>
+       `;
+      }); 
      AudioIsPlaying = false;
     }
     }

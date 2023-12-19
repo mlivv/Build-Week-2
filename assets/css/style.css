@@ -125,6 +125,13 @@ body {
   justify-content: flex-end;
   padding-bottom: 20px;
 }
+.artist-header-content-top {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  display: flex;
+  padding-top: 20px;
+}
 .artist-header-content svg {
   color: #5c92fe;
 }
@@ -326,8 +333,10 @@ button:hover {
   color: lightgreen;
 }
 
-.search-page-container {
-  padding: 20px 30px;
+.search-page-container{
+  padding:20px 30px;
+  height: 100vh;
+ 
 }
 
 @media screen and (min-width: 768px) {
@@ -364,4 +373,9 @@ button:hover {
   cursor: pointer;
   transform: rotate(0) scale(1.07);
   opacity: 1;
+}
+
+.sidebar-wrapper-cerca{
+   /* Add height */
+  overflow-y: scroll  /* Add overflow-x */
 }
