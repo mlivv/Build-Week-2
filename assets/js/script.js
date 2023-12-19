@@ -56,6 +56,8 @@ function showData(artista){
         .catch(err => console.log(err))
 }
 
+let firstFive = [];
+let secondFive = [];
 
 function showSongs(urlFinal){
   let arrayData =[];
@@ -67,21 +69,21 @@ function showSongs(urlFinal){
     })
     console.log(arrayData);
    let closestSongs = arrayData.sort((a, b) => Math.abs(a.rank - 1000000) - Math.abs(b.rank - 1000000)).slice(0, 10);
-   let firstFive = closestSongs.slice(0, 5);
-   let secondFive = closestSongs.slice(5, 10);
+  firstFive = closestSongs.slice(0, 5);
+   secondFive = closestSongs.slice(5, 10);
 
  console.log(secondFive);
- topRanked(firstFive);
- topRankedCollapsed(secondFive);
+ topRanked();
+ topRankedCollapsed();
 } 
 
-function topRanked(closestSongsArray){
+function topRanked(){
   let popularSongsContainer = document.getElementById("artist-popolare-brani");
   popularSongsContainer.innerHTML = '';
   let number = 1;
-  closestSongsArray.forEach(element =>{
+  firstFive.forEach((element,index) =>{
     popularSongsContainer.innerHTML += `
-    <div class="song-block d-flex align-items-center justify-content-between" onmouseover=" playButton(this)"  onmouseout="returnNormal(this)" onclick=" setSongBar(this, '${element.title}', '${element.artist.name}','${element.album.cover}','${element.preview}')">
+    <div class="song-block d-flex align-items-center justify-content-between" onmouseover=" playButton(this)"  onmouseout="returnNormal(this)" onclick=" setSongBar(this, '${index}', '${firstFive}')">
     <div class="element-heading d-flex align-items-center gap-3">
         <span class="fs-4 number">
           ${number} 
@@ -112,11 +114,11 @@ function topRanked(closestSongsArray){
 
 }
 
-function topRankedCollapsed(closestSongsArray){
+function topRankedCollapsed(){
   let popularSongsContainer = document.getElementById("braniCollapse");
   popularSongsContainer.innerHTML = '';
   let number = 6;
-  closestSongsArray.forEach(element =>{
+  secondFive.forEach(element =>{
     popularSongsContainer.innerHTML += `
     <div class="song-block d-flex align-items-center justify-content-between" onmouseover=" playButton(this)"  onmouseout="returnNormal(this)" onclick=" setSongBar(this, '${element.title}', '${element.artist.name}','${element.album.cover}','${element.preview}')">
     <div class="element-heading d-flex align-items-center gap-3">
@@ -152,7 +154,8 @@ function topRankedCollapsed(closestSongsArray){
   
   let lastElement = null;
 
-  function setSongBar(currentElement, title, name, cover, previewAudio) {
+  function setSongBar(currentElement, index) {
+    const song =  firstFive[index];
     if (lastElement !== currentElement) {
       if (lastElement) {
         lastElement.querySelector(".element-heading").classList.remove("color-green-play");
@@ -166,10 +169,10 @@ function topRankedCollapsed(closestSongsArray){
       currentElement.querySelector(".element-heading").classList.add("color-green-play");
       lastElement = currentElement;
   
-      document.getElementById("album-cover-bar").innerHTML = `<img src="${cover}" alt="artist-album-image" height="60px">`;
-      document.getElementById("title-artist-bar").innerHTML = name;
-      document.getElementById("title-song-bar").innerHTML = title;
-      document.getElementById("current-audio-played").innerHTML = `<audio src="${previewAudio}" class="audio"></audio>`;
+      document.getElementById("album-cover-bar").innerHTML = `<img src="${song.album.cover}" alt="artist-album-image" height="60px">`;
+      document.getElementById("title-artist-bar").innerText = song.artist.name;
+      document.getElementById("title-song-bar").innerText = song.title;
+      document.getElementById("current-audio-played").innerHTML = `<audio src="${song.preview}" class="audio"></audio>`;
     }
     
     playMusic();
@@ -227,11 +230,7 @@ seconds = + seconds * 10 ;
 return minutes + ":" + seconds;
 }
 
-function playSongBar(title,name,cover){
-  document.getElementById("album-cover-bar").innerHTML = `<img src="${cover}" alt="artist-album-image" height="60px">`;
-  document.getElementById("title-artist-bar").innerHTML = name;
-  document.getElementById("title-song-bar").innerHTML = title;
-}
+
 
 
 collapse = false;
