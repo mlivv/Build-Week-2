@@ -30,7 +30,7 @@
                                     Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#"><i class="bi bi-search"></i> Search</a>
+                                <a class="nav-link" href="search-page.html"><i class="bi bi-search"></i> Search</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#"><i class="bi bi-collection"></i> La tua Libreria</a>
@@ -100,8 +100,34 @@
         <main class="sidebar-wrapper col-12 col-lg-8 artist-center-section">
             <div class="artist-header">
                 <img id="artist-banner" src="https://therockrevival.com/wp-content/uploads/2023/02/308707431_623756372436903_6197440860849993096_n.jpg" alt="artist banner">
+                
                 <div class="artist-header-content ms-3">
+                    <div class="artist-header-content-top">
+                            <div class="">
+                                <svg onclick="history.back()"  xmlns="http://www.w3.org/2000/svg"
+                                width="30"
+                                height="30"
+                                fill="currentColor"
+                                class="bi bi-arrow-left-circle text-white me-3"
+                                viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                  d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z" />
+                              </svg>
+                        
+                        
+                              <svg class="opacity-50" xmlns="http://www.w3.org/2000/svg"
+                                width="30"
+                                height="30"
+                                fill="currentColor"
+                                class="bi bi-arrow-right-circle text-white"
+                                viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                  d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z" />
+                              </svg>
+                            </div>
+                    </div>
                     <div class="artist-verified text-white fw-bold">
+                        
                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-patch-check " viewBox="0 0 16 16">
                             <path d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01-.622-.636zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708z"/>
                           </svg>
@@ -112,6 +138,29 @@
                         <span class="listeners opacity-50"> <span id="listeners"></span> ascoltatori mensili</span>
                     </div>
                 </div>
+                <div class="dropdown position-absolute top-0 end-0 p-3 pe-4">
+                    <a class="btn dropdown-toggle rounded-5 p-2" style="background: #000;" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                    
+                    <img style="width: 26px; height: 26px;" src="https://cdn.vox-cdn.com/thumbor/9zW39Bo4Z99gUC4yUbu6MIZSuO8=/0x0:1920x796/1200x675/filters:focal(689x221:995x527)/cdn.vox-cdn.com/uploads/chorus_image/image/69553881/lotr3_movie_screencaps.com_25312.0.jpg" class="rounded-circle">
+                    <span class="me-3">Legolas</span>
+                </a>
+                  
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <li>
+                              <a class="dropdown-item list-item text-white"
+                                href="#"><span>Account</span></a>
+                            </li>
+                            <li>
+                              <a class="dropdown-item list-item text-white"
+                                href="#"><span>Impostazioni</span></a>
+                            </li>
+    
+                            <li>
+                              <a class="dropdown-item list-item text-white"
+                                href="#"><span>Esci</span></a>
+                            </li>
+                    </ul>
+                  </div>
             </div>
             <div class="row py-4 px-4">
                 <div class="artist-seguiti-section d-flex align-items-center">
@@ -146,7 +195,7 @@
                     <h3 class="mb-4 fw-bolder">Brani che ti piacciono</h3>
                     <div class="d-flex align-items-center gap-3">
                         <div class="artist-brano-photo">
-                            <img id="artist-icon" src="https://i.scdn.co/image/ab6761610000e5eb952381a70ceeda02554ad545" alt="" class="rounded-circle" height="80px">
+                            <img id="artist-icon" src="" alt="" class="rounded-circle" height="80px">
                             <div class="artist-like-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-heart-fill mt-1" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
@@ -177,7 +226,12 @@
                 
                 <li class="nav-item">
                   <div class="myFriend">
-                      <div class="accountPic"></div>
+                    <img
+                    src="https://upload.wikimedia.org/wikipedia/it/d/d6/Il_Signore_degli_Anelli_341.jpg"
+                    style="width: 40px; height: 40px"
+                    class="accountPic"
+                    alt=""
+                  />
                     
                       <div class="account">
                           <div class="accountName">
@@ -196,7 +250,12 @@
                
                 <li class="nav-item">
                   <div class="myFriend">
-                      <div class="accountPic"></div>
+                    <img
+                    src=" https://images.everyeye.it/img-notizie/il-signore-anelli-gimli-non-felice-serie-tv-amazon-v3-311909.jpg"
+                    style="width: 40px; height: 40px"
+                    class="accountPic"
+                    alt=""
+                  />
                     
                       <div class="account">
                           <div class="accountName">
@@ -215,7 +274,12 @@
 
                 <li class="nav-item">
                   <div class="myFriend">
-                      <div class="accountPic"></div>
+                    <img
+                    src="https://i1.sndcdn.com/artworks-000126124056-yjn0ok-t500x500.jpg"
+                    style="width: 40px; height: 40px"
+                    class="accountPic"
+                    alt=""
+                  />
                     
                       <div class="account">
                           <div class="accountName">
@@ -234,7 +298,12 @@
 
                 <li class="nav-item">
                   <div class="myFriend">
-                      <div class="accountPic"></div>
+                    <img
+                    src="https://www.lascimmiapensa.com/wp-content/uploads/2021/07/il-signore-degli-anelli-gollum.jpg"
+                    style="width: 40px; height: 40px"
+                    class="accountPic"
+                    alt=""
+                  />
                     
                       <div class="account">
                           <div class="accountName">
@@ -253,7 +322,12 @@
 
                 <li class="nav-item">
                   <div class="myFriend">
-                      <div class="accountPic"></div>
+                    <img
+                    src=" https://images.everyeye.it/img-notizie/il-signore-anelli-forma-comparire-sauron-v5-551024.jpg"
+                    style="width: 40px; height: 40px"
+                    class="accountPic"
+                    alt=""
+                  />
                     
                       <div class="account">
                           <div class="accountName">
@@ -277,7 +351,7 @@
     <div class="row mx-0">
         <div class="col-12 artist-barra border border-dark">
             <div class="row align-items-center">
-                        <div class="col-12 col-md-4 d-flex align-items-center">
+                        <div class="col-10 col-md-4 d-flex align-items-center">
                             <div class="align-self-start me-2" id="album-cover-bar">
                                 <img src="https://marcheinfinite.com/wp-content/uploads/2023/12/unnamed-44.jpg" alt="artist-album-image" height="60px">
                             </div>
@@ -289,11 +363,16 @@
                                 <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
                               </svg>
                         </div>
-                        <div class="d-none d-md-block  col-md-4 d-flex flex-column">
-                            <div class="d-flex justify-content-center align-items-center gap-4 mb-3">
+                        <div  class="col-2 d-block d-md-none play-icon-bar" onclick="playMusic()">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="white" class="bi bi-play-circle-fill" viewBox="0 0 16 16">
+                                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5"/>
+                            </svg>
+                        </div>
+                        <div class="d-none d-md-block col-md-4 d-flex flex-column">
+                            <div class=" d-flex justify-content-center align-items-center gap-4 mb-3">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" id="shuffle" width="26" height="26"><rect width="26" height="26" fill="none"></rect><path  fill="none" stroke="lightgreen" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" d="M32,72H55.06445a64,64,0,0,1,52.079,26.80076l41.7132,58.39848A64,64,0,0,0,200.93555,184H232"></path><polyline fill="none" stroke="lightgreen" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" points="208 48 232 72 208 96"></polyline><polyline fill="none" stroke="lightgreen" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" points="208 160 232 184 208 208"></polyline><path fill="none" stroke="lightgreen" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" d="M147.66275 100.47214l1.19385-1.67138A64 64 0 0 1 200.93555 72H232M32 184H55.06445a64 64 0 0 0 52.079-26.80076l1.19384-1.67138"></path></svg>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="white" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-skip-back"><polygon points="19 20 9 12 19 4 19 20"/><line x1="5" y1="19" x2="5" y2="5"/></svg>
-                                    <div id="play-icon-bar" onclick="playMusic()">
+                                    <div class="play-icon-bar" onclick="playMusic()">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="white" class="bi bi-play-circle-fill" viewBox="0 0 16 16">
                                             <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5"/>
                                         </svg>
@@ -303,7 +382,7 @@
                                         <path d="M11 5.466V4H5a4 4 0 0 0-3.584 5.777.5.5 0 1 1-.896.446A5 5 0 0 1 5 3h6V1.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192Zm3.81.086a.5.5 0 0 1 .67.225A5 5 0 0 1 11 13H5v1.466a.25.25 0 0 1-.41.192l-2.36-1.966a.25.25 0 0 1 0-.384l2.36-1.966a.25.25 0 0 1 .41.192V12h6a4 4 0 0 0 3.585-5.777.5.5 0 0 1 .225-.67Z"/>
                                       </svg>
                             </div>
-                            <input type="range" min="0" max="5" step="0.3" id="customRange3">
+                            <input type="range" min="0" max="5" step="0.3" id="customRange3" value="0">
                         </div>
                         <div class="d-none d-md-block col-md-4 align-self-center">
                             <div class=" d-flex align-items-center gap-3 justify-content-end">

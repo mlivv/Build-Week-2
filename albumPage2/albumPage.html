@@ -21,6 +21,12 @@
       <div class="row g-0">
         <div class="d-none d-md-block col-md-2 divNav text-white p-3">
           <nav class="navbar navbar-expand-lg navbar-dark">
+            <!-- Toggler per dispositivi di dimensioni ridotte 
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                  aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+              </button>-->
+
             <!-- Contenuto della barra di navigazione -->
             <div>
               <ul class="navbar-nav flex-column">
@@ -30,7 +36,7 @@
                   >
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#"
+                  <a class="nav-link" href="../search-page.html"
                     ><i class="bi bi-search"></i> Search</a
                   >
                 </li>
@@ -68,45 +74,50 @@
           </div>
           <hr />
 
-          <section class="scroll scrollbar-dusty-grass">
-            <p>Prof Ivan santo subito &#128131;&#128591;</p>
-            <p>Pippo &#128054; Pluto &#128021; e Paperino &#129414;</p>
-            <p>&#128076;&#128072;&#128064;</p>
-            <p>ThEy aRe TaKinG tHe hObBits to IsEnGard &#129501;&#127996;</p>
-            <p>WHY IS THE RUM GONE &#129324;</p>
-            <p>PIRIPIRIPIRI &#127930;</p>
-            <p>World domination background music &#129412;</p>
-            <p>mi sto annoiando &#128117;</p>
-            <p>Prof Ivan santo subito &#128131;&#128591;</p>
-            <p>Pippo &#128054; Pluto &#128021; e Paperino &#129414;</p>
-            <p>&#128076;&#128072;&#128064;</p>
-            <p>ThEy aRe TaKinG tHe hObBits to IsEnGard &#129501;&#127996;</p>
-            <p>WHY IS THE RUM GONE &#129324;</p>
-            <p>PIRIPIRIPIRI &#127930;</p>
-            <p>World domination background music &#129412;</p>
-            <p>mi sto annoiando &#128117;</p>
-            <p>div..div ovunque</p>
-            <p>js di &#128169;</p>
-            <p>js di &#128169;</p>
-            <p>js di &#128169;</p>
-            <p>js di &#128169;</p>
-            <p>js di &#128169;</p>
-            <p>js di &#128169;</p>
-            <p>js di &#128169;</p>
-            <p>js di &#128169;</p>
-            <p>js di &#128169;</p>
-          </section>
+          <div class="scrollbar-dusty-grass">
+            <div class="playlist">
+              <p>Prof Ivan santo subito &#128131;&#128591;</p>
+              <p>Pippo &#128054; Pluto &#128021; e Paperino &#129414;</p>
+              <p>&#128076;&#128072;&#128064;</p>
+              <p>ThEy aRe TaKinG tHe hObBits to IsEnGard &#129501;&#127996;</p>
+              <p>WHY IS THE RUM GONE &#129324;</p>
+              <p>PIRIPIRIPIRI &#127930;</p>
+              <p>World domination background music &#129412;</p>
+              <p>mi sto annoiando &#128117;</p>
+              <p>Prof Ivan santo subito &#128131;&#128591;</p>
+              <p>Pippo &#128054; Pluto &#128021; e Paperino &#129414;</p>
+              <p>&#128076;&#128072;&#128064;</p>
+              <p>ThEy aRe TaKinG tHe hObBits to IsEnGard &#129501;&#127996;</p>
+              <p>WHY IS THE RUM GONE &#129324;</p>
+              <p>PIRIPIRIPIRI &#127930;</p>
+              <p>World domination background music &#129412;</p>
+              <p>mi sto annoiando &#128117;</p>
+              <p>div..div ovunque</p>
+              <p>js di &#128169;</p>
+              <p>js di &#128169;</p>
+              <p>js di &#128169;</p>
+              <p>js di &#128169;</p>
+              <p>js di &#128169;</p>
+              <p>js di &#128169;</p>
+              <p>js di &#128169;</p>
+              <p>js di &#128169;</p>
+              <p>js di &#128169;</p>
+            </div>
+          </div>
         </div>
         <!--main part-->
         <main
-          class="sidebar-wrapper col-12 col-md-8 offset-md-2 artist-center-section"
+          class="sidebar-wrapper col-12 col-md-8 artist-center-section album-center-section"
         >
           <!-- <div class=""> -->
+
           <div class="containerAlbum mt-3">
             <!-- top row con frecce e username -->
             <div class="row align-items-center justify-content-between">
               <div class="col-3 ps-4">
                 <svg
+                  onclick="history.back()"
+                  style="cursor: pointer"
                   xmlns="http://www.w3.org/2000/svg"
                   width="30"
                   height="30"
@@ -121,6 +132,7 @@
                 </svg>
 
                 <svg
+                  onclick="history.forward()"
                   xmlns="http://www.w3.org/2000/svg"
                   width="30"
                   height="30"
@@ -134,79 +146,63 @@
                   />
                 </svg>
               </div>
+            
 
-              <!-- fine divs sinistra -->
-              <div class="col-2">
-                <div id="dropdownMenuButton" data-toggle="dropdown">
-                  <button
-                    type="button"
-                    class="btn btn-dark btn-sm dropdown-toggle d-flex align-items-center bg-black justify-content-between rounded-pill p-1"
-                    data-bs-toggle="dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                  >
-                    <img
-                      src="https://cdn.vox-cdn.com/thumbor/9zW39Bo4Z99gUC4yUbu6MIZSuO8=/0x0:1920x796/1200x675/filters:focal(689x221:995x527)/cdn.vox-cdn.com/uploads/chorus_image/image/69553881/lotr3_movie_screencaps.com_25312.0.jpg"
-                      alt="Icona utente"
-                      class="rounded-circle"
-                      width="30"
-                      height="30"
-                    />
+            <!-- fine divs sinistra -->
+            <div class="col-2 pe-2">
+              <div id="dropdownMenuButton" data-toggle="dropdown">
+                <button
+                  type="button"
+                  class="btn btn-dark btn-sm dropdown-toggle d-flex align-items-center bg-black justify-content-between rounded-pill p-1"
+                  data-bs-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  <img
+                    src="https://cdn.vox-cdn.com/thumbor/9zW39Bo4Z99gUC4yUbu6MIZSuO8=/0x0:1920x796/1200x675/filters:focal(689x221:995x527)/cdn.vox-cdn.com/uploads/chorus_image/image/69553881/lotr3_movie_screencaps.com_25312.0.jpg"
+                    alt="Icona utente"
+                    class="rounded-circle"
+                    width="30"
+                    height="30"
+                  />
 
-                    <span>Legolas</span>
+                  <span>Legolas</span>
 
-                    <span class="dropdown-toggle-icon"></span>
-                  </button>
+                  <span class="dropdown-toggle-icon"></span>
+                </button>
 
-                  <div class="dropdown-menu account-list">
-                    <div class="link-list-wrapper">
-                      <ul class="link-list">
-                        <li>
-                          <a class="dropdown-item list-item text-white" href="#"
-                            ><span>Account</span></a
-                          >
-                        </li>
-                        <li>
-                          <a class="dropdown-item list-item text-white" href="#"
-                            ><span>Impostazioni</span></a
-                          >
-                        </li>
+                <div class="dropdown-menu account-list">
+                  <div class="link-list-wrapper">
+                    <ul class="link-list">
+                      <li>
+                        <a class="dropdown-item list-item text-white" href="#"
+                          ><span>Account</span></a
+                        >
+                      </li>
+                      <li>
+                        <a class="dropdown-item list-item text-white" href="#"
+                          ><span>Impostazioni</span></a
+                        >
+                      </li>
 
-                        <li>
-                          <a class="dropdown-item list-item text-white" href="#"
-                            ><span>Esci</span></a
-                          >
-                        </li>
-                      </ul>
-                    </div>
+                      <li>
+                        <a class="dropdown-item list-item text-white" href="#"
+                          ><span>Esci</span></a
+                        >
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </div>
-              <!--fine div a destra-->
             </div>
-            <!--fine top row -->
+            </div>
+            <!--fine div a destra-->
           </div>
+          <!--fine top row -->
+          <!-- </div> -->
           <!--inizio row album + link artist page (da aggiungere ancora)-->
-          <div class="mt-4 ps-4" id="containerDatiAlbum">
-            <img id="album_Cover" />
-            <div id="containerTestoAlbum">
-              <h2 class="text-white small">ALBUM</h2>
-              <h1 class="text-white" id="album_Name">NOME ALBUM</h1>
-              <div class="align-items-center">
-                <a
-                  href="#"
-                  class="d-flex text-white align-items-center"
-                  id="linkArtista"
-                >
-                  <img
-                    src="./assets/imgs/ab67616100005174859e4c14fa59296c8649e0e4.jpg"
-                    class="rounded-circle me-3"
-                    width="10%"
-                  />
-                  <p class="artist_Name">Artista</p>
-                </a>
-              </div>
-            </div>
+          <div class="mt-4 ps-4 row" id="containerDatiAlbum">
+            <!--viene popolato dinaminamente -->
           </div>
           <!--container play + prefe + download -->
           <div class="mt-4 containerSongs">
@@ -303,11 +299,11 @@
                   </svg>
                 </div>
                 <hr class="text-white" />
-              </div>  
-                <!-- canzoni -->
-                <div id="boxSongs">
-                  <!--popolato con js-->
-                </div>
+              </div>
+              <!-- canzoni -->
+              <div id="boxSongs">
+                <!--popolato con js-->
+              </div>
             </div>
           </div>
           <!-- canzoni -->
@@ -330,7 +326,12 @@
 
               <li class="nav-item">
                 <div class="myFriend">
-                  <div class="accountPic"></div>
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/it/d/d6/Il_Signore_degli_Anelli_341.jpg"
+                    style="width: 40px; height: 40px"
+                    class="accountPic"
+                    alt=""
+                  />
 
                   <div class="account">
                     <div class="accountName">
@@ -350,7 +351,12 @@
 
               <li class="nav-item">
                 <div class="myFriend">
-                  <div class="accountPic"></div>
+                  <img
+                    src=" https://images.everyeye.it/img-notizie/il-signore-anelli-gimli-non-felice-serie-tv-amazon-v3-311909.jpg"
+                    style="width: 40px; height: 40px"
+                    class="accountPic"
+                    alt=""
+                  />
 
                   <div class="account">
                     <div class="accountName">
@@ -370,7 +376,12 @@
 
               <li class="nav-item">
                 <div class="myFriend">
-                  <div class="accountPic"></div>
+                  <img
+                    src="https://i1.sndcdn.com/artworks-000126124056-yjn0ok-t500x500.jpg"
+                    style="width: 40px; height: 40px"
+                    class="accountPic"
+                    alt=""
+                  />
 
                   <div class="account">
                     <div class="accountName">
@@ -390,7 +401,12 @@
 
               <li class="nav-item">
                 <div class="myFriend">
-                  <div class="accountPic"></div>
+                  <img
+                    src="https://www.lascimmiapensa.com/wp-content/uploads/2021/07/il-signore-degli-anelli-gollum.jpg"
+                    style="width: 40px; height: 40px"
+                    class="accountPic"
+                    alt=""
+                  />
 
                   <div class="account">
                     <div class="accountName">
@@ -410,7 +426,12 @@
 
               <li class="nav-item">
                 <div class="myFriend">
-                  <div class="accountPic"></div>
+                  <img
+                    src=" https://images.everyeye.it/img-notizie/il-signore-anelli-forma-comparire-sauron-v5-551024.jpg"
+                    style="width: 40px; height: 40px"
+                    class="accountPic"
+                    alt=""
+                  />
 
                   <div class="account">
                     <div class="accountName">
@@ -431,10 +452,12 @@
           </div>
         </div>
       </div>
+
+      <!--da qui-->
       <div class="row mx-0">
-        <div class="col-12 artist-barra border border-dark">
+        <div class="col artist-barra border- border-dark">
           <div class="row">
-            <div class="col-12 col-md-4 d-flex align-items-center">
+            <div class="col-4 d-flex align-items-center">
               <div class="align-self-start me-2">
                 <img
                   src="https://marcheinfinite.com/wp-content/uploads/2023/12/unnamed-44.jpg"
@@ -443,10 +466,10 @@
                 />
               </div>
               <div class="align-self-center my-2 me-4">
-                <p class="fw-medium mb-0 text-white">
+                <p class="fw-medium mb-0 text-light">
                   All I Want For Christmas Is You
                 </p>
-                <small class="text-white">By Gerry Scotti</small>
+                <small class="text-light">By Gerry Scotti</small>
               </div>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -461,7 +484,7 @@
                 />
               </svg>
             </div>
-            <div class="d-none d-md-block col-md-4 d-flex flex-column">
+            <div class="col-4 align-self-center d-flex flex-column">
               <div
                 class="d-flex justify-content-center align-items-center gap-4 mb-3"
               >
@@ -569,58 +592,58 @@
                 id="customRange3"
               />
             </div>
-            <div class="d-none d-md-block col-md-4 align-self-center">
-              <div class="d-flex align-items-center gap-3 justify-content-end">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="#909090"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M22,4H2A1,1,0,0,0,1,5v6a1,1,0,0,0,1,1H22a1,1,0,0,0,1-1V5A1,1,0,0,0,22,4Zm-1,6H3V6H21Zm2,5a1,1,0,0,1-1,1H2a1,1,0,0,1,0-2H22A1,1,0,0,1,23,15Zm0,4a1,1,0,0,1-1,1H2a1,1,0,0,1,0-2H22A1,1,0,0,1,23,19Z"
-                  />
-                </svg>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#909090"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="feather feather-volume-2"
-                >
-                  <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
-                  <path
-                    d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"
-                  />
-                </svg>
-                <input
-                  type="range"
-                  min="0"
-                  max="5"
-                  step="0.3"
-                  id="customRange"
+            <div
+              class="col-4 d-flex align-items-center gap-3 justify-content-end"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="#909090"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M22,4H2A1,1,0,0,0,1,5v6a1,1,0,0,0,1,1H22a1,1,0,0,0,1-1V5A1,1,0,0,0,22,4Zm-1,6H3V6H21Zm2,5a1,1,0,0,1-1,1H2a1,1,0,0,1,0-2H22A1,1,0,0,1,23,15Zm0,4a1,1,0,0,1-1,1H2a1,1,0,0,1,0-2H22A1,1,0,0,1,23,19Z"
                 />
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="#909090"
-                  class="bi bi-arrows-angle-expand"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707zm4.344-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707"
-                  />
-                </svg>
-              </div>
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#909090"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-volume-2"
+              >
+                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+                <path
+                  d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"
+                />
+              </svg>
+              <input
+                type="range"
+                min="0"
+                max="5"
+                step="0.3"
+                id="customRange3"
+              />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="#909090"
+                class="bi bi-arrows-angle-expand"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707zm4.344-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707"
+                />
+              </svg>
             </div>
           </div>
         </div>
