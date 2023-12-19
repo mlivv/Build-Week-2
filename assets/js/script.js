@@ -83,7 +83,7 @@ function topRanked(){
   let number = 1;
   firstFive.forEach((element,index) =>{
     popularSongsContainer.innerHTML += `
-    <div class="song-block d-flex align-items-center justify-content-between" onmouseover=" playButton(this)"  onmouseout="returnNormal(this)" onclick=" setSongBar(this, '${index}', '${firstFive}')">
+    <div class="song-block d-flex align-items-center justify-content-between" onmouseover=" playButton(this)"  onmouseout="returnNormal(this)" onclick=" setSongBar(this, '${index}',1)">
     <div class="element-heading d-flex align-items-center gap-3">
         <span class="fs-4 number">
           ${number} 
@@ -118,9 +118,9 @@ function topRankedCollapsed(){
   let popularSongsContainer = document.getElementById("braniCollapse");
   popularSongsContainer.innerHTML = '';
   let number = 6;
-  secondFive.forEach(element =>{
+  secondFive.forEach((element, index) =>{
     popularSongsContainer.innerHTML += `
-    <div class="song-block d-flex align-items-center justify-content-between" onmouseover=" playButton(this)"  onmouseout="returnNormal(this)" onclick=" setSongBar(this, '${element.title}', '${element.artist.name}','${element.album.cover}','${element.preview}')">
+    <div class="song-block d-flex align-items-center justify-content-between" onmouseover=" playButton(this)"  onmouseout="returnNormal(this)" onclick=" setSongBar(this, '${index}',2)">
     <div class="element-heading d-flex align-items-center gap-3">
         <span class="fs-4 number">
           ${number} 
@@ -154,8 +154,13 @@ function topRankedCollapsed(){
   
   let lastElement = null;
 
-  function setSongBar(currentElement, index) {
-    const song =  firstFive[index];
+  function setSongBar(currentElement, index, numb) {
+    let song = null
+    if (numb === 1){
+    song =  firstFive[index];
+    } else {
+    song =  secondFive[index];
+    }
     if (lastElement !== currentElement) {
       if (lastElement) {
         lastElement.querySelector(".element-heading").classList.remove("color-green-play");
