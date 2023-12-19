@@ -27,15 +27,14 @@ function getAlbum() {
     .then((data) => {
       let album = data;
       console.log(album);
-
       popolaBanner(data);
-
       popolaCanzoni(data);
     })
     .catch((err) => console.log("Fetch error:", err));
 }
 
 window.onload = getAlbum();
+
 
 function popolaBanner(artista) {
   let containerDatiAlbum = document.getElementById("containerDatiAlbum");
@@ -68,25 +67,27 @@ function popolaBanner(artista) {
 
 
     let newContainerDatiAlbum = `
-        <img id="album_Cover" src="${album.cover_medium}" />
-        <div id="containerTestoAlbum">
-          <h2 class="text-white small">ALBUM</h2>
-          <h1 class="text-white" id="album_Name">${album.title}</h1>
-          <div class="align-items-center">
-            <a
-              href="#"
+    
+      <div class="col-12 col-md-4 col-lg-4 text-center">
+        <img id="album_Cover" src="${album.cover_medium}" class="img-fluid mb-2"/>
+      </div>
+      <div id="containerTestoAlbum" class="col-12 col-md-7 col-lg-7">
+        <h2 class="text-white small">ALBUM</h2>
+        <h1 class="text-white" id="album_Name">${album.title}</h1>
+          <a
+              href="../artist.html?id=${album.artist.id}"
               class="d-flex text-white align-items-center"
               id="linkArtista"
-            >
-              <img
+          >
+            <img
                 src="${artist.picture_small}"
                 class="rounded-circle me-3"
                 
-              />
-              <p class="artist_Name">${artist.name} • ${year} • ${album.nb_tracks} brani, ${formattedDuration}  </p>
+            />
+            <p class="artist_Name">${artist.name} • ${year} • ${album.nb_tracks} brani, ${formattedDuration}  </p>
             </a>
-          </div>
-        </div> 
+        </div>
+      
           `;
 
     containerDatiAlbum.innerHTML = newContainerDatiAlbum;
