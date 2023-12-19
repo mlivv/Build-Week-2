@@ -11,7 +11,7 @@ const headers = {
 /* id = "248216622"; */
 
 const searchParams = new URLSearchParams(window.location.search)
-console.log(URLSearchParams);
+// console.log(URLSearchParams);
 const id = searchParams.get("Id")
 
 let album = [];
@@ -21,7 +21,6 @@ function getAlbum() {
     headers: headers,
   })
     .then((res) => {
-      console.log(res);
       return res.json();
     })
     .then((data) => {
@@ -45,7 +44,6 @@ function popolaBanner(artista) {
   })
     .then((res) => res.json())
     .then((data) => {
-
       let album = data;
       let artist = data.artist;
       let releaseDate = album.release_date;
@@ -65,34 +63,37 @@ function popolaBanner(artista) {
       return `${minutes} min, ${seconds} sec.`;
     }
 
-
     let newContainerDatiAlbum = `
     
-      <div class="col-12 col-md-4 col-lg-4 text-center">
-        <img id="album_Cover" src="${album.cover_medium}" class="img-fluid mb-2"/>
+      <div class="col-12 col-md-3 col-lg-3 text-center">
+        <img id="album_Cover" src="${album.cover_medium}" class="img-fluid mb-2" style="object-fit: cover"/>
       </div>
-      <div id="containerTestoAlbum" class="col-12 col-md-7 col-lg-7">
+      <div id="containerTestoAlbum" class="col-12 col-md-9 col-lg-9">
         <h2 class="text-white small">ALBUM</h2>
         <h1 class="text-white" id="album_Name">${album.title}</h1>
           <a
-              href="../artist.html?id=${album.artist.id}"
               class="d-flex text-white align-items-center"
               id="linkArtista"
           >
             <img
                 src="${artist.picture_small}"
                 class="rounded-circle me-3"
-                
+                onclick="getToArtist('${album.artist.id}')"
             />
-            <p class="artist_Name">${artist.name} • ${year} • ${album.nb_tracks} brani, ${formattedDuration}  </p>
+            <p class="artist_Name" onclick="getToArtist('${album.artist.id}')">${artist.name} • ${year} • ${album.nb_tracks} brani, ${formattedDuration} </p>
             </a>
         </div>
-      
           `;
-
+          
     containerDatiAlbum.innerHTML = newContainerDatiAlbum;
   }
 };
+
+
+const getToArtist = (id) => {
+  window.location.assign("../artist.html?Id=" + id);
+  };
+
 // funzione per popolare la scatola delle canzoni
 function popolaCanzoni(artista) {
   let boxSongs = document.getElementById("boxSongs");
@@ -103,7 +104,6 @@ function popolaCanzoni(artista) {
   })
     .then((res) => res.json())
     .then((data) => {
-
       let album = data;
       let tracklist = data.tracks.data;
       let artist = data.artist;
