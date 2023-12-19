@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "CircularStd";
+  src: url(./fonts/CircularStd-Medium.otf) format("otf");
+}
+
 body {
   font-size: 0.9em;
     margin: 0;
@@ -5,23 +10,21 @@ body {
   background: rgb(209, 144, 204);
   background: linear-gradient(
     180deg,
-    rgba(209, 144, 204, 1) 0%,
-    rgba(0, 0, 0, 1) 100%
-  );
+    rgba(163, 163, 163, 100) 0%,
+    rgba(0, 0, 0, 1) 100%);
+    background-attachment: fixed;
 }
 
 .divNav {
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
   background-color: #000000;
   color: #fff;
   font-size: 0.9em;
+  height: 100vh; /* Imposta l'altezza al 100% dell'altezza della viewport */
+    /* overflow: auto; Abilita la barra di scorrimento quando necessario */
 }
-.divNav i {
+.divNav i{
   font-size: 1.3em;
+  
 }
 .navbar-nav {
   flex-direction: column;
@@ -34,53 +37,52 @@ body {
   display: block;
 }
 
-.favourite,
-.add,
-.bookmark {
-  width: 25px;
-  height: 25px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 2%;
-  border-radius: 2px;
-  font-size: 10px;
+
+.favourite, .add, .bookmark{
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2%;
+    border-radius: 2px;
+    font-size: 10px;
+    
+
 }
 
-.favourite {
-  background-image: linear-gradient(#3c1fa8, #7b918b);
-  color: #fff;
+.favourite{
+    background-image: linear-gradient(#3C1FA8, #7B918B);
+    color: #fff;
+
 }
 
-.add {
-  background-color: #b2b2b2;
-  color: #000;
+.add{
+    background-color: #B2B2B2;
+    color: #000;
+
 }
 
-.bookmark {
-  background-color: #004537;
-  color: #149643;
+.bookmark{
+    background-color: #004537;
+    color: #149643;
 }
 
-.scroll,
-.scrollHome {
-  overflow-y: scroll;
-}
-
-.scroll {
-  height: 50%;
-}
-
-.scrollHome {
-  height: 75%;
+.scrollbar-dusty-grass{
+  max-height: calc(100vh - 45%);
+  overflow: auto;
 }
 
 .scrollbar-dusty-grass::-webkit-scrollbar-track {
   border-radius: 10px;
 }
 
+
 .scrollbar-dusty-grass::-webkit-scrollbar {
   width: 12px;
+  background-color: #F5F5F5;
+  background-color: #333;
+  
 }
 
 .scrollbar-dusty-grass::-webkit-scrollbar-thumb {
@@ -88,9 +90,18 @@ body {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
   background-image: -webkit-linear-gradient(330deg, #d4fc79 0%, #3fd868 100%);
   background-image: linear-gradient(120deg, #d4fc79 0%, #3fd868 100%);
-}
+} 
+
 /* fine sidebar flavia */
 /* MAIN  */
+
+.sidebar-wrapper{ /* Add height */
+overflow-y: 100%;  /* Add overflow-y */
+overflow-x: hidden;
+height: 60%;  /* Add overflow-x */
+}
+
+
 
 .account-list {
   width: 200px;
@@ -126,7 +137,7 @@ nav button {
 
 .containerSongs {
   background-color: rgba(0, 0, 0, 0.5);
-  height: 70%; 
+  height: calc(100vh - 90px); 
 }
 
 #containerDatiAlbum {
@@ -225,17 +236,13 @@ nav button {
   margin-inline-start: 2rem;
 }
 
-@font-face {
-  font-family: "CircularStd";
-  src: url(./fonts/CircularStd-Medium.otf) format("otf");
-}
 
 .navDx {
   background-color: #000;
   height: 100%;
   padding: 5%;
   color: #fff;
-  font-family: "CircularStd", sans-serif;
+  font-family: 'CircularStd', sans-serif;
 }
 
 .friendsActivity {

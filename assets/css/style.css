@@ -1,292 +1,286 @@
-
 @font-face {
-  font-family: 'CircularStd';
+  font-family: "CircularStd";
   src: url(/assets/circular-std-medium-500.ttf);
 }
-body{
-    font-size: 0.9rem;
-    font-family: "CircularStd";
-    font-weight: 100;
-    background-color: #121212;
+body {
+  font-size: 0.9rem;
+  font-family: "CircularStd";
+  font-weight: 100;
+  background-color: #121212;
 }
 
 .divNav {
-    background-color: #000000;
-    color: #fff;
-    font-size: 0.9em;
-  }
-.divNav i{
-    font-size: 1.3em;
-    
+  background-color: #000000;
+  color: #fff;
+  font-size: 0.9em;
 }
-  .navbar-nav {
-    flex-direction: column;
-  }
+.divNav i {
+  font-size: 1.3em;
+}
+.navbar-nav {
+  flex-direction: column;
+}
 
-  .navbar a {
-    padding: 10px;
-    text-decoration: none;
-    color: #fff;
-    display: block;
-  }
+.navbar a {
+  padding: 10px;
+  text-decoration: none;
+  color: #fff;
+  display: block;
+}
 
+.favourite,
+.add,
+.bookmark {
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2%;
+  border-radius: 2px;
+  font-size: 10px;
+}
 
-  .favourite, .add, .bookmark{
-      width: 25px;
-      height: 25px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 2%;
-      border-radius: 2px;
-      font-size: 10px;
-      
+.favourite {
+  background-image: linear-gradient(#3c1fa8, #7b918b);
+  color: #fff;
+}
 
-  }
+.add {
+  background-color: #b2b2b2;
+  color: #000;
+}
 
-  .favourite{
-      background-image: linear-gradient(#3C1FA8, #7B918B);
-      color: #fff;
+.bookmark {
+  background-color: #004537;
+  color: #149643;
+}
 
-  }
-
-  .add{
-      background-color: #B2B2B2;
-      color: #000;
-
-  }
-
-  .bookmark{
-      background-color: #004537;
-      color: #149643;
-  }
-
-  .scrollbar-dusty-grass::-webkit-scrollbar-track {
-    border-radius: 10px;
-  }
-
+.scrollbar-dusty-grass::-webkit-scrollbar-track {
+  border-radius: 10px;
+  overflow: auto;
+}
 
 .scrollbar-dusty-grass::-webkit-scrollbar {
-    width: 12px;
-    background-color: #F5F5F5;
-    background-color: #333;
+  width: 12px;
+  background-color: #f5f5f5;
+  background-color: #333;
 }
 
 .scrollbar-dusty-grass::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
-    background-image: -webkit-linear-gradient(330deg, #d4fc79 0%, #3fd868 100%);
-    background-image: linear-gradient(120deg, #d4fc79 0%, #3fd868 100%);
-} 
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+  background-image: -webkit-linear-gradient(330deg, #d4fc79 0%, #3fd868 100%);
+  background-image: linear-gradient(120deg, #d4fc79 0%, #3fd868 100%);
+}
 
-.sidebar-wrapper{ /* Add height */
-  overflow-y: 100%;  /* Add overflow-y */
+.sidebar-wrapper {
+  /* Add height */
+  overflow-y: 100%; /* Add overflow-y */
   overflow-x: hidden;
-  height: 60%;  /* Add overflow-x */
+  height: 60%; /* Add overflow-x */
 }
 
-#customRange3{
-    width: 100%;
+#customRange3 {
+  width: 100%;
 }
-.artist-barra{
+.artist-barra {
   position: fixed;
   padding: 15px;
   bottom: 0;
   background-color: #181818;
 }
-.container-fluid{
+.container-fluid {
   padding: 0;
 }
-.artist-center-section{
-    /*margin-bottom: 90px;*/
-    padding-bottom: 100px;
+.artist-center-section {
+  /*margin-bottom: 90px;*/
+  padding-bottom: 100px;
   height: calc(100vh - 110px);
-   background: linear-gradient(to bottom,#2D2D2A,#131313);
+  background: linear-gradient(to bottom, #2d2d2a, #131313);
 }
 .artist-header {
-   width: 100%;
-   height: 40%;
-   position: relative;
-   min-height: 200px;
+  width: 100%;
+  height: 40%;
+  position: relative;
+  min-height: 200px;
 }
-.artist-header h1{
-    font-size: 80px;
- }
+.artist-header h1 {
+  font-size: 80px;
+}
 
 .artist-header img {
-       opacity: 0.7;
-       height: 100%;
-       width: 100%;
-       object-fit: cover;
-       object-position: center;
-  }
+  opacity: 0.7;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
 .artist-header-content {
-       position: absolute;
-       top: 0;
-       height: 100%;
-       display: flex;
-       flex-direction: column;
-       justify-content: flex-end;
-       padding-bottom: 20px;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 20px;
 }
 .artist-header-content svg {
-   color: #5C92FE;
+  color: #5c92fe;
 }
 
-.artist-brano-photo{
-   position: relative;
+.artist-brano-photo {
+  position: relative;
 }
-.artist-like-icon{
-   position: absolute;
-   text-align: center;
-   height: 30px;
-   width: 30px;
-   bottom:-10px;
-   right: 0;
-   background-color:#23BB59;
-   border: 3px solid rgb(0, 0, 0);
-   border-radius: 50%;
-}
-
-.artist-popolare-brani{
-   margin-inline-start: 0.2rem;
+.artist-like-icon {
+  position: absolute;
+  text-align: center;
+  height: 30px;
+  width: 30px;
+  bottom: -10px;
+  right: 0;
+  background-color: #23bb59;
+  border: 3px solid rgb(0, 0, 0);
+  border-radius: 50%;
 }
 
-.bi-three-dots-vertical{
-    display: none;
+.artist-popolare-brani {
+  margin-inline-start: 0.2rem;
 }
 
-.shuffle-svg{
+.bi-three-dots-vertical {
   display: none;
 }
-.navDx{
+
+.shuffle-svg {
+  display: none;
+}
+.navDx {
   background-color: #000;
   height: 100%;
   padding: 5%;
   color: #fff;
-  font-family: 'CircularStd', sans-serif;
+  font-family: "CircularStd", sans-serif;
 }
 
-.friendsActivity{
+.friendsActivity {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-li{
+li {
   margin: 3% 0;
 }
 
-.friendsActivity h6{
+.friendsActivity h6 {
   margin: 0;
 }
 
-.myFriend{
+.myFriend {
   display: flex;
   align-items: center;
   font-size: smaller;
 }
-.account{
+.account {
   width: 100%;
   padding: 0 3%;
-  color: #ADACAD;
+  color: #adacad;
 }
 
-.account p{
+.account p {
   margin: 2px 0;
 }
 
-.accountPic{
-  padding: 20px;
-  width: 40px;
-  height: 40px;
+.accountPic {
   border-radius: 50%;
-  background-color: aquamarine;
   align-self: start;
+  object-fit: cover;
 }
-.accountName{
+
+.accountName {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.colonna-canzone-ascolti{
-    display: flex;
-    flex-direction: row;
+.colonna-canzone-ascolti {
+  display: flex;
+  flex-direction: row;
 }
-@media screen and (max-width:768px) {
+@media screen and (max-width: 768px) {
   .artist-header-content h1 {
     font-size: 60px;
   }
-    .artist-brani{
-        order: 1;
-    }
-    .artist-popolari{
-        order: 2;
-    }
-    .artist-center-section{
-        height: calc(100vh - 90px);
-    }
-    .artist-popolari{
-        width: 100%;
-    }
-    .artist-brani{
-        width: 100%;
-    }
-    .play-svg{
-        order: 3;
-    }
-    .artist-seguiti-section{
-        justify-content: space-between;
-    }
-    .shuffle-svg{
-        display: inline-block;
-    }
-    .bi-play-circle-fill{
-       fill: rgba(255, 255, 255, 0.84);
-    }
-    .time-text{
-        display: none;
-    }
-    .ascolti-text{
-        display: block;
-    }
-    .bi-three-dots-vertical{
-        display: inline-block;
-    }
-    .sfoglia-tutto-section .card{
-      overflow: hidden;
-      object-fit: cover;
-      height: 140px;
-      width: 100%;
-      min-width: 200px;
-      max-width: 260px;
-      border-radius: 10px;
-      border: none;
-    }
-    .sfoglia-tutto-section .card img{
-      position: absolute;
-      right: -14%;
-      bottom: -3%;
-      z-index: 0;
-      width: 7rem;
-      overflow: auto;
-      border-radius: 10px;
-      transform: rotate(25deg);
-      border-radius: 20px;
-      box-shadow: -3px 3px 10px rgba(0, 0, 0, 0.742);
-    }
-    .sfoglia-tutto-section .card h3{
-      font-size: 22px;
-    }
+  .artist-brani {
+    order: 1;
+  }
+  .artist-popolari {
+    order: 2;
+  }
+  .artist-center-section {
+    height: calc(100vh - 90px);
+  }
+  .artist-popolari {
+    width: 100%;
+  }
+  .artist-brani {
+    width: 100%;
+  }
+  .play-svg {
+    order: 3;
+  }
+  .artist-seguiti-section {
+    justify-content: space-between;
+  }
+  .shuffle-svg {
+    display: inline-block;
+  }
+  .bi-play-circle-fill {
+    fill: rgba(255, 255, 255, 0.84);
+  }
+  .time-text {
+    display: none;
+  }
+  .ascolti-text {
+    display: block;
+  }
+  .bi-three-dots-vertical {
+    display: inline-block;
+  }
+  .sfoglia-tutto-section .card {
+    overflow: hidden;
+    object-fit: cover;
+    height: 140px;
+    width: 100%;
+    min-width: 200px;
+    max-width: 260px;
+    border-radius: 10px;
+    border: none;
+  }
+  .sfoglia-tutto-section .card img {
+    position: absolute;
+    right: -14%;
+    bottom: -3%;
+    z-index: 0;
+    width: 7rem;
+    overflow: auto;
+    border-radius: 10px;
+    transform: rotate(25deg);
+    border-radius: 20px;
+    box-shadow: -3px 3px 10px rgba(0, 0, 0, 0.742);
+  }
+  .sfoglia-tutto-section .card h3 {
+    font-size: 22px;
+  }
 }
 
-
-.divNav, .scrollbar-dusty-grass {
+.divNav,
+.scrollbar-dusty-grass {
   overflow-y: auto;
   height: calc(100vh - 460px);
 }
-.divNav{
+.divNav {
   overflow-y: hidden;
   height: calc(100vh - 110px);
 }
@@ -302,7 +296,7 @@ li{
 }
 
 body {
-  overflow: hidden; 
+  overflow: hidden;
 }
 
 .artist-popolare-brani div:hover {
@@ -310,33 +304,34 @@ body {
   cursor: pointer;
 }
 
-.artist-popolare-brani div{
+.artist-popolare-brani div {
   padding: 5px 12px;
   border-radius: 6px;
 }
 
-svg, button,  .card{
+svg,
+button,
+.card {
   transition: 0.3s;
 }
-svg:hover, button:hover{
+svg:hover,
+button:hover {
   transition: 0.3s;
   opacity: 0.6;
   cursor: pointer;
-  transform:rotate(0) scale(1.07);
+  transform: rotate(0) scale(1.07);
 }
 
-.color-green-play{
+.color-green-play {
   color: lightgreen;
 }
 
-
-.search-page-container{
-  padding:20px 30px;
-
+.search-page-container {
+  padding: 20px 30px;
 }
 
-@media screen and (min-width:768px) {
-  .sfoglia-tutto-section .card{
+@media screen and (min-width: 768px) {
+  .sfoglia-tutto-section .card {
     overflow: hidden;
     object-fit: cover;
     height: 240px;
@@ -346,7 +341,7 @@ svg:hover, button:hover{
     border-radius: 10px;
     border: none;
   }
-  .sfoglia-tutto-section .card img{
+  .sfoglia-tutto-section .card img {
     position: absolute;
     right: -12%;
     bottom: -3%;
@@ -360,13 +355,13 @@ svg:hover, button:hover{
   }
 }
 
-.card{
+.card {
   transition: 0.3s;
   opacity: 0.8;
 }
-.card:hover{
+.card:hover {
   transition: 0.3s;
   cursor: pointer;
-  transform:rotate(0) scale(1.07);
+  transform: rotate(0) scale(1.07);
   opacity: 1;
 }
