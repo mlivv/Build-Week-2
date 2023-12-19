@@ -81,7 +81,7 @@ function topRanked(closestSongsArray){
   let number = 1;
   closestSongsArray.forEach(element =>{
     popularSongsContainer.innerHTML += `
-    <div class="song-block d-flex align-items-center justify-content-between" onmouseover=" playButton(this)"  onmouseout="returnNormal(this)" onclick=" setSongBar(this, '${element.title}', '${element.artist.name}','${element.album.cover}','${element.preview}')">
+    <div class="song-block d-flex align-items-center justify-content-between" onmouseover=" playButton(this)"  onmouseout="returnNormal(this)" onclick=" setSongBar(this, '\${element.title}', '\${element.artist.name}','${element.album.cover}','${element.preview}')">
     <div class="element-heading d-flex align-items-center gap-3">
         <span class="fs-4 number">
           ${number} 
@@ -118,7 +118,7 @@ function topRankedCollapsed(closestSongsArray){
   let number = 6;
   closestSongsArray.forEach(element =>{
     popularSongsContainer.innerHTML += `
-    <div class="song-block d-flex align-items-center justify-content-between" onmouseover=" playButton(this)"  onmouseout="returnNormal(this)" onclick=" setSongBar(this, '${element.title}', '${element.artist.name}','${element.album.cover}','${element.preview}')">
+    <div class="song-block d-flex align-items-center justify-content-between" onmouseover=" playButton(this)"  onmouseout="returnNormal(this)" onclick=" setSongBar(this, '\${element.title}', '\${element.artist.name}','${element.album.cover}','${element.preview}')">
     <div class="element-heading d-flex align-items-center gap-3">
         <span class="fs-4 number">
           ${number} 
