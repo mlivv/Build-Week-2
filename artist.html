@@ -327,64 +327,7 @@
         crossorigin="anonymous"></script>
 
         <script src="assets/js/script.js"></script>
-        <script>window.onload = function() {
-            // Ottieni l'ID dell'artista dalla query string
-            const urlParams = new URLSearchParams(window.location.search);
-            const artistId = urlParams.get('id');
-          
-            // Chiamata API per ottenere informazioni sull'artista utilizzando artistId
-            fetch(`${artistUrl}${artistId}`, { headers: { Authorization: token } })
-              .then(response => {
-                if (!response.ok) {
-                  throw new Error(`HTTP error! Status: ${response.status}`);
-                }
-                return response.json();
-              })
-              .then(artistData => {
-                console.log(artistData);
-          
-                // Ora puoi utilizzare artistData per visualizzare le informazioni sull'artista nella pagina artist.html
-          
-                // Esempio: Mostra il nome dell'artista
-                const artistNameElement = document.getElementById('artistName');
-                artistNameElement.textContent = artistData.name;
-          
-                // Esempio: Mostra le canzoni dell'artista
-                fetch(`${artistUrl}${artistId}/top?limit=5`, { headers: { Authorization: token } })
-                  .then(response => {
-                    if (!response.ok) {
-                      throw new Error(`HTTP error! Status: ${response.status}`);
-                    }
-                    return response.json();
-                  })
-                  .then(data => {
-                    const songsList = data.data.map(song => `<p>${song.title}</p>`).join('');
-                    const songsContainer = document.getElementById('songsContainer');
-                    songsContainer.innerHTML = `
-                        <div class="mt-3">
-                            <h6>Songs:</h6>
-                            ${songsList}
-                        </div>`;
-                  })
-                  .catch(error => console.error('Error fetching artist songs data:', error));
-              })
-              .catch(error => console.error('Error fetching artist data:', error));
-          };
-          fetch(`${artistUrl}${artistId}`, { headers: { Authorization: token } })
-  .then(response => {
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
-    }
-    return response.json();
-  })
-  .then(artistData => {
-    console.log(artistData);
-    // Il resto del tuo codice...
-  })
-  .catch(error => {
-    console.error('Error fetching artist data:', error);
-    // Gestisci l'errore qui (ad esempio, visualizzando un messaggio all'utente)
-  });
+      
 
           </script>
 </body>
