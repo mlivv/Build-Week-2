@@ -404,3 +404,8 @@ svg:hover, button:hover{
  input[type=range]::-webkit-slider-thumb:hover {
    opacity: 1;
    }
+
+
+  .result-search-artist:hover, .result-search-song:hover{
+    color: lightgreen;
+  }

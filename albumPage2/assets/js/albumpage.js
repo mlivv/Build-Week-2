@@ -8,11 +8,11 @@ const headers = {
   "Content-Type": "application/json",
 };
 
-id = "248216622";
+/* id = "248216622"; */
 
-// const searchParams = new URLSearchParams(window.location.search)
-// console.log(URLSearchParams);
-// const id = searchParams.get("Id")
+const searchParams = new URLSearchParams(window.location.search)
+console.log(URLSearchParams);
+const id = searchParams.get("Id")
 
 let album = [];
 

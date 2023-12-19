@@ -1,13 +1,13 @@
 const url = "https://striveschool-api.herokuapp.com/api/deezer/artist/";
 const token = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTc0NzJkMTJjNmEwZDAwMTg0OTVlZTUiLCJpYXQiOjE3MDI2NTQ1MzYsImV4cCI6MTcwMzg2NDEzNn0.WnoH3SBnfknooZB_pjcaeyWM6RT3HJh3JpiHOVWtT54";
 /* let id = "4050205"; */
-let id = "4050205"
+/* let id = "4050205" */
 
 let tracklist = [];
 
-/* const searchParams = new URLSearchParams(window.location.search)
+const searchParams = new URLSearchParams(window.location.search)
 console.log(URLSearchParams);
-const id = searchParams.get("Id") */
+const id = searchParams.get("Id")
 
 window.onload = () => {
   show();
