@@ -227,11 +227,7 @@ seconds = + seconds * 10 ;
 return minutes + ":" + seconds;
 }
 
-function playSongBar(title,name,cover){
-  document.getElementById("album-cover-bar").innerHTML = `<img src="${cover}" alt="artist-album-image" height="60px">`;
-  document.getElementById("title-artist-bar").innerHTML = name;
-  document.getElementById("title-song-bar").innerHTML = title;
-}
+
 
 
 collapse = false;
