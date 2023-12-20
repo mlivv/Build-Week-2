@@ -11,6 +11,7 @@ body {
     background-color: #000000;
     color: #fff;
     font-size: 0.9em;
+    
   }
   .mobile {
     width: 100%;
@@ -76,7 +77,8 @@ body {
   } */
 
   .scroll{
-    height: 40%;
+    max-height: calc(100vh - 38%);
+  overflow: auto;
   }
 
   .scrollHome{

@@ -14,6 +14,10 @@ const searchParams = new URLSearchParams(window.location.search)
 // console.log(URLSearchParams);
 const id = searchParams.get("Id")
 
+if (!id){
+  window.location.href='../homepage.html';
+}
+
 let album = [];
 
 function getAlbum() {
@@ -136,7 +140,7 @@ function createCardSongs(album, artist, contributors, tracklist) {
              
             </div>
             <div class="col-4">
-              <p class="small textColorSongs">${element.rank}</p>
+              <p class="small textColorSongs">${element.rank.toLocaleString('it-IT', { style: 'decimal' })}</p>
             </div>
             <div class="col-2">
               <p class="timeSong small textColorSongs">${formattedDuration}</p>
