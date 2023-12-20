@@ -1,127 +1,12 @@
 const url= "https://striveschool-api.herokuapp.com/api/deezer/album/75621062"
-
+const token = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTc3MzVlOWMwNTgzNTAwMTg1MjJjMzQiLCJpYXQiOjE3MDIzNzIxMjAsImV4cCI6MTcwMzU4MTcyMH0.M3xwRVlQWPhO7bbGx9CS9wFqiUHTqJ9jax6PuA_Yy7Y"
 const headers = {
     "Authorization": token,
     "Accept": "application/json",
     "Content-Type": "application/json"
 }
-
-
-
-const video = document.getElementById('myVideo');
-const musicRange = document.getElementById('customRange3');
-const playButtonCircle = document.querySelector('.bi-play-circle-fill');
-const pauseButton = document.querySelector('.feather-skip-back');
-const stopButton = document.querySelector('.feather-skip-forward');
-const musicBar = document.getElementById('customRange3');
-const volumeBar = document.getElementById('volumeRange');
-
-let isPlaying = false;
-let hasBeenPlayed = false;
-
-function togglePlayPause() {
-  if (isPlaying) {
-    video.pause();
-  } else {
-    if (!hasBeenPlayed) {
-      video.currentTime = 0;
-      hasBeenPlayed = true;
-    }
-    video.muted = false;
-    video.play();
-  }
-  isPlaying = !isPlaying;
-}
-
-playButtonCircle.addEventListener('click', togglePlayPause);
-
-pauseButton.addEventListener('click', function () {
-  video.pause();
-  isPlaying = false;
-});
-
-stopButton.addEventListener('click', function () {
-  video.pause();
-  video.currentTime = 0;
-  isPlaying = false;
-});
-
-musicRange.addEventListener('input', function () {
-  const time = video.duration * (musicRange.value / 5);
-  video.currentTime = time;
-});
-
-function updateMusicBar() {
-  const currentTime = video.currentTime;
-  const duration = video.duration;
-  musicBar.value = (currentTime / duration) * 5;
-}
-
-video.addEventListener('timeupdate', updateMusicBar);
-
-musicBar.addEventListener('input', function () {
-  const time = video.duration * (musicBar.value / 5);
-  video.currentTime = time;
-});
-
-//FUNZIONE PER REGOLARE IL VOLUME
-function updateVolume(volume) {
-  video.volume = volume;
-
-
-  if (volume === 0) {
-    volumeIcon.classList.remove('volume-max');
-    volumeIcon.classList.add('volume-min');
-  } else {
-    volumeIcon.classList.remove('volume-min');
-    volumeIcon.classList.add('volume-max');
-  }
-}
-
-// Event listener for volume change
-volumeBar.addEventListener('input', function () {
-  const volumeValue = parseFloat(this.value);
-  updateVolume(volumeValue / 5); // Normalizing volume value between 0 and 1
-});
-
-// FUNZIONE PER GESTIRE L'ICONA DEL MUTO
-function toggleMute() {
-  if (video.volume === 0) {
-    updateVolume(0.5); 
-  } else {
-    updateVolume(0);
-  }
-}
-
-
-document.getElementById('muteIcon').addEventListener('click', toggleMute);
-
-
-
-
-//-----------------------------------------PULSANTE PLAY IN ALTO-------------------------------------
-
-const playButton = document.querySelector('.play-btn');
-
-// Evento di click sul pulsante "Play"
-playButton.addEventListener('click', function () {
- 
-  const video = document.getElementById('myVideo');
-
-  
-  if (video.paused) {
-      // Se è in pausa, avvia la riproduzione
-    video.play();
-  } else {
-    // Altrimenti, metti in pausa la riproduzione
-    video.pause();
-  }
-});
-//-----------------------------------------------------------------------------------------------GET------------------------------------------------------------------------------------
-
-
 const artistUrl = 'https://striveschool-api.herokuapp.com/api/deezer/artist/';
-const token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTc0N2ZhODJjNmEwZDAwMTg0OTVmNmIiLCJpYXQiOjE3MDI2NTYxMjAsImV4cCI6MTcwMzg2NTcyMH0.S7mJfmwPwI0mA0Wv_RX0dqsvST9Uhf7baWaYKaJ2mM4';
+
 
 function getRandomArtistId() {
   const totalArtists = 10000; // Supponendo un numero elevato di artisti disponibili
@@ -131,136 +16,103 @@ function getRandomArtistId() {
 function getRandomArtists(count) {
   const randomArtists = [];
   for (let i = 0; i < count; i++) {
-    const randomArtistId = getRandomArtistId();
-    randomArtists.push(randomArtistId);
+      const randomArtistId = getRandomArtistId();
+      randomArtists.push(randomArtistId);
   }
   return randomArtists;
 }
 
 function displayRandomArtists() {
-  const randomArtists = getRandomArtists(12); // numero card da visualizzare
-  const collectionContainer = document.querySelector('.collection'); 
+  const randomArtists = getRandomArtists(20); // Visualizzeremo 5 artisti
+  const collectionContainer = document.querySelector('.collection'); // Seleziona l'elemento con la classe 'collection'
 
   randomArtists.forEach(artistId => {
-    fetch(artistUrl + artistId, { headers: { Authorization: token } })
-      .then(response => {
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        return response.json();
-      })
-      .then(artistData => {
-        console.log(artistData);
-        const artistCard = createArtistCard(artistData);
-        collectionContainer.appendChild(artistCard);
-      })
-      .catch(error => {
-        console.error('Error fetching artist data:', error);
-        // Se non riusciamo a ottenere le informazioni dell'artista, creiamo comunque una card con informazioni base
-        const placeholderData = {
-          id: artistId,
-          name: 'Unknown Artist',
-          picture_big: 'https://upload.wikimedia.org/wikipedia/it/d/d6/Il_Signore_degli_Anelli_341.jpg'
-        };
-        const artistCard = createArtistCard(placeholderData);
-        collectionContainer.appendChild(artistCard);
-      });
+      fetch(`${artistUrl}${artistId}`, { headers: { Authorization: token } })
+          .then(response => {
+              return response.json();
+          })
+          .then(artistData => {
+              console.log(artistData);
+              const artistCard = createArtistCard(artistData);
+              collectionContainer.appendChild(artistCard); // Aggiungi la card dell'artista al container 'collection'
+          })
+          .catch(error => console.error('Error fetching artist data:', error));
   });
 }
 
-
-// Esegui la funzione per visualizzare le card degli artisti al caricamento della pagina
-window.onload = displayRandomArtists;
-
 function createArtistCard(artistData) {
-  const card = document.createElement('a');
-  // card.href = `artist.html?id=${artistData.id}`;
-  card.classList.add('d-flex', 'align-items-stretch'); //classi bootsrap
+  const cardContainer = document.createElement('div');
+  cardContainer.classList.add('card', 'trend', 'p-3', 'sm-6', 'col-12', 'col-md-4', 'col-lg-3');
+  cardContainer.style.width = '12rem'; // Imposta la larghezza desiderata
+  cardContainer.onclick = function(){
+    return getToArtistPage(artistData.id);
+ }
+ 
+  const image = document.createElement('img');
+  image.src = artistData.picture_big;
+  image.classList.add('card-img-top', 'cardImage');
+  image.alt = artistData.name;
 
+  const cardBody = document.createElement('div');
+  cardBody.classList.add('card-body', 'px-0');
 
-  card.style.textDecoration = 'none'; 
+  const title = document.createElement('h6');
+  title.classList.add('card-title', 'd-block', 'text-truncate', 'no-decoration', 'mb-0');
+  title.style.maxWidth = "150px";
+  title.textContent = artistData.name;
 
+  const smallElement = document.createElement('small');
+  smallElement.classList.add('card-text', 'd-block', 'no-decoration', 'text-truncate');
+  title.style.maxWidth = "150px";
+  smallElement.id = `songTitle${artistData.id}`;
 
-  const cardContent = document.createElement('div');
-  cardContent.className = 'card trend p-3 sm-6 md-6 my-2 d-flex flex-column';
-  cardContent.style.width = '12rem';
-  cardContent.style.minHeight = '200px';
+  cardBody.appendChild(title);
+  cardBody.appendChild(smallElement);
 
-  cardContent.innerHTML = `
-      <img src="${artistData.picture_big}" class="card-img-top" alt="${artistData.name}">
-      <div class="card-body px-0">
-          <h6 class="card-title d-block text-truncate no-decoration mb-0" style="max-width: 150px" onclick="getToArtistPage('${artistData.id}')">${artistData.name}</h6>
-          <small class="card-text no-decoration" id="songTitle${artistData.id}" style="display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"></small>       
-      </div>
+  // Aggiunta delle icone
+  const iconsContainer = document.createElement('div');
+  iconsContainer.classList.add('d-flex', 'justify-content-between', 'iconeBoot');
+
+  const iconGroup1 = document.createElement('div');
+  iconGroup1.innerHTML = `
+    <i class="bi bi-heart-fill " style="color: #00bb5b;"></i>
+    <i class="bi bi-three-dots-vertical"></i>
   `;
 
-  card.appendChild(cardContent);
-  return card;
+  const playIcon = document.createElement('div');
+  playIcon.innerHTML = `<i class="bi bi-play-circle-fill"></i>`;
+
+  iconsContainer.appendChild(iconGroup1);
+  iconsContainer.appendChild(playIcon);
+
+  cardContainer.appendChild(image);
+  cardContainer.appendChild(cardBody);
+  cardContainer.appendChild(iconsContainer);
+
+
+
+  // Effettua la fetch delle canzoni dell'artista
+  fetch(`${artistUrl}${artistData.id}/top?limit=5`, { headers: { Authorization: token } })
+    .then(response => response.json())
+    .then(data => {
+      console.log(data.data)
+      let song = data.data;
+      const randomIndex = Math.floor(Math.random() * song.length);
+      let randomSong = song[randomIndex].title;
+      const smallElement = document.getElementById(`songTitle${artistData.id}`);
+      smallElement.textContent = ` ${randomSong}`;
+    })
+    .catch(error => console.error('Error fetching top song data:', error));
+
+
+  return cardContainer;
+}
+
+
+window.onload = displayRandomArtists;
+const getToArtistPage = (id) =>  { 
+  window.location.assign ("./artist.html?Id="+ id);
 }
 
 
 
-
-
-function viewSongs(artistId) {
-  const container = document.getElementById(`songsContainer${artistId}`);
-
-  // Se l'elemento contiene già contenuto, lo rimuoviamo
-  if (container.innerHTML.trim() !== '') {
-    container.innerHTML = '';
-    return;
-  }
-
-
-  // Fetch per ottenere gli album dell'artista
-  fetch(`${artistUrl}${artistId}/albums`, { headers: { Authorization: token } })
-    .then(response => {
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-      return response.json();
-    })
-    .then(albumsData => {
-      const albumsList = albumsData.data.map(album => `<p>${album.title}</p>`).join('');
-      container.innerHTML += `
-      <div class="mt-3">
-          <h6>Albums:</h6>
-          ${albumsList}
-      </div>`;
-    })
-    .catch(error => console.error('Error fetching artist albums data:', error));
-}
-
-
-
-
-
-
-// simulazione scrittura dei testi nella nav di sinistra creata da flavia
-
-   const paragraphs = document.querySelectorAll('.scroll p');
-
-    function typeWriterEffect(element, text, speed) {
-        let index = 0;
-        const typing = setInterval(() => {
-            element.textContent += text.charAt(index);
-            index++;
-            if (index > text.length) {
-                clearInterval(typing);
-            }
-        }, speed);
-    }
-
-    paragraphs.forEach((paragraph, index) => {
-        const originalText = paragraph.textContent.trim();
-        paragraph.textContent = ''; // Svuota il paragrafo
-
-        setTimeout(() => {
-            typeWriterEffect(paragraph, originalText, 100); // 100 è la velocità di scrittura
-        }, index * 2000); // Ritardo tra i paragrafi
-    });
-
-
-    const getToArtistPage = (id) =>{
-      window.location.assign("./artist.html?Id=" + id)
-    }
